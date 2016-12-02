@@ -193,6 +193,10 @@
                                                     <action selector="deleteButtonTapped:" destination="RRu-WX-bwX" eventType="touchUpInside" id="wAq-zW-xib"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZB-06-kmj">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
+                                                <state key="normal" title="="/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -200,6 +204,7 @@
                                             <constraint firstItem="QOf-70-US1" firstAttribute="bottom" secondItem="1sr-nY-7LN" secondAttribute="bottom" id="CzV-SR-QeU"/>
                                             <constraint firstItem="oBi-VO-wEs" firstAttribute="leading" secondItem="QOf-70-US1" secondAttribute="trailing" constant="1" id="EDZ-3z-D8A"/>
                                             <constraint firstItem="HTX-FT-6zE" firstAttribute="bottom" secondItem="oBi-VO-wEs" secondAttribute="bottom" id="Jwe-4b-fEJ"/>
+                                            <constraint firstItem="YZB-06-kmj" firstAttribute="trailing" secondItem="1sr-nY-7LN" secondAttribute="trailing" id="Kvd-9w-cd5"/>
                                             <constraint firstItem="QOf-70-US1" firstAttribute="leading" secondItem="1sr-nY-7LN" secondAttribute="trailing" constant="1" id="Ldv-aF-zxj"/>
                                             <constraint firstItem="oBi-VO-wEs" firstAttribute="top" secondItem="QOf-70-US1" secondAttribute="top" id="WXH-eV-u8Q"/>
                                             <constraint firstItem="HTX-FT-6zE" firstAttribute="leading" secondItem="oBi-VO-wEs" secondAttribute="trailing" constant="1" id="YHC-Ag-keG"/>
@@ -210,8 +215,11 @@
                                             <constraint firstItem="QOf-70-US1" firstAttribute="top" secondItem="1sr-nY-7LN" secondAttribute="top" id="hgh-Kk-Q0M"/>
                                             <constraint firstItem="HTX-FT-6zE" firstAttribute="top" secondItem="oBi-VO-wEs" secondAttribute="top" id="kTe-G8-yAj"/>
                                             <constraint firstItem="QOf-70-US1" firstAttribute="width" secondItem="1sr-nY-7LN" secondAttribute="width" id="q1b-fj-YSO"/>
+                                            <constraint firstItem="YZB-06-kmj" firstAttribute="top" secondItem="1sr-nY-7LN" secondAttribute="top" id="qXR-EY-AeB"/>
                                             <constraint firstItem="HTX-FT-6zE" firstAttribute="width" secondItem="oBi-VO-wEs" secondAttribute="width" id="rBP-f6-ZCk"/>
+                                            <constraint firstItem="YZB-06-kmj" firstAttribute="leading" secondItem="1sr-nY-7LN" secondAttribute="leading" id="tS7-R1-6vQ"/>
                                             <constraint firstAttribute="bottom" secondItem="1sr-nY-7LN" secondAttribute="bottom" id="wHP-Fb-VvI"/>
+                                            <constraint firstItem="YZB-06-kmj" firstAttribute="bottom" secondItem="1sr-nY-7LN" secondAttribute="bottom" id="yHz-KT-p3A"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -420,6 +428,21 @@
                     <connections>
                         <outlet property="decimalButton" destination="QOf-70-US1" id="DiK-su-4YM"/>
                         <outlet property="deleteButton" destination="HTX-FT-6zE" id="3bC-tE-APl"/>
+                        <outlet property="equalsButton" destination="YZB-06-kmj" id="bER-1G-3rm"/>
+                        <outletCollection property="digitButtons" destination="oBi-VO-wEs" id="ORb-lz-ydF"/>
+                        <outletCollection property="digitButtons" destination="C2f-Db-BQf" id="2mr-HO-Wt4"/>
+                        <outletCollection property="digitButtons" destination="XIp-Im-8WQ" id="Vvl-gP-fqM"/>
+                        <outletCollection property="digitButtons" destination="UKH-Ac-vZd" id="za3-g2-t7t"/>
+                        <outletCollection property="digitButtons" destination="mO2-ya-lE9" id="hI7-BO-Jnx"/>
+                        <outletCollection property="digitButtons" destination="Ay2-fo-B6T" id="hcZ-uz-KBa"/>
+                        <outletCollection property="digitButtons" destination="BYA-S4-ukB" id="Ckv-Re-Icm"/>
+                        <outletCollection property="digitButtons" destination="i9i-fg-QpP" id="u8E-k4-NTg"/>
+                        <outletCollection property="digitButtons" destination="9CO-Nn-Gs4" id="FQF-UN-ZsH"/>
+                        <outletCollection property="digitButtons" destination="nCa-cE-BTK" id="JyS-cP-KmN"/>
+                        <outletCollection property="operatorButtons" destination="FzQ-7I-4Sj" id="Dvr-oj-7YE"/>
+                        <outletCollection property="operatorButtons" destination="vTk-zF-aAO" id="LXJ-cB-Sge"/>
+                        <outletCollection property="operatorButtons" destination="vul-hF-tMD" id="bc5-hx-BjS"/>
+                        <outletCollection property="operatorButtons" destination="1sr-nY-7LN" id="15F-wv-OE6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgw-fS-0iX" userLabel="First Responder" sceneMemberID="firstResponder"/>

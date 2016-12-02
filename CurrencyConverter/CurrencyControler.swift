@@ -25,6 +25,20 @@ class CurrencyControler: UIViewController {
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         
     }
+    
+    
+    @IBOutlet weak var equalsButton: UIButton!
+    
+    @IBOutlet var operatorButtons: [UIButton]!
+    func operationButtonTapped(_ sender: UIButton) {
+        
+    }
+    
+    
+    @IBOutlet var digitButtons: [UIButton]!
+    func digitButtonTapped(_ sender: UIButton) {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
