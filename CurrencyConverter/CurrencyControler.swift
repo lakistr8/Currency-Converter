@@ -39,6 +39,17 @@ class CurrencyControler: UIViewController {
     func digitButtonTapped(_ sender: UIButton) {
         
     }
+    
+    enum ArithmeticOperation {
+        case none
+        case add, subtract, multiply, divide
+        case equals
+    }
+    
+    var activeOperation = ArithmeticOperation.none
+    
+    var firstOperand = 0.0
+    var secondOperand = 0.0
 }
 
 
