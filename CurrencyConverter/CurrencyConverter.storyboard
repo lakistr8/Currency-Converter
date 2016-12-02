@@ -247,7 +247,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pod-Hn-esm" userLabel="panel">
                                 <rect key="frame" x="0.0" y="91.5" width="375" height="128"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37i-7D-5q5" userLabel="curLeft">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37i-7D-5q5" userLabel="curLeft" customClass="CurrencyBox" customModule="CurrencyConverter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="128"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNO-tn-rWc" userLabel="flagbox">
@@ -296,7 +296,7 @@
                                             <constraint firstItem="TNO-tn-rWc" firstAttribute="leading" secondItem="37i-7D-5q5" secondAttribute="leading" id="xui-BX-T6N"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enG-tG-bcx" userLabel="curRight">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enG-tG-bcx" userLabel="curRight" customClass="CurrencyBox" customModule="CurrencyConverter" customModuleProvider="target">
                                         <rect key="frame" x="188" y="0.0" width="187" height="128"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELd-sX-3fw" userLabel="flagBox">
@@ -429,20 +429,20 @@
                         <outlet property="decimalButton" destination="QOf-70-US1" id="DiK-su-4YM"/>
                         <outlet property="deleteButton" destination="HTX-FT-6zE" id="3bC-tE-APl"/>
                         <outlet property="equalsButton" destination="YZB-06-kmj" id="bER-1G-3rm"/>
-                        <outletCollection property="digitButtons" destination="oBi-VO-wEs" id="ORb-lz-ydF"/>
-                        <outletCollection property="digitButtons" destination="C2f-Db-BQf" id="2mr-HO-Wt4"/>
-                        <outletCollection property="digitButtons" destination="XIp-Im-8WQ" id="Vvl-gP-fqM"/>
-                        <outletCollection property="digitButtons" destination="UKH-Ac-vZd" id="za3-g2-t7t"/>
-                        <outletCollection property="digitButtons" destination="mO2-ya-lE9" id="hI7-BO-Jnx"/>
-                        <outletCollection property="digitButtons" destination="Ay2-fo-B6T" id="hcZ-uz-KBa"/>
-                        <outletCollection property="digitButtons" destination="BYA-S4-ukB" id="Ckv-Re-Icm"/>
-                        <outletCollection property="digitButtons" destination="i9i-fg-QpP" id="u8E-k4-NTg"/>
-                        <outletCollection property="digitButtons" destination="9CO-Nn-Gs4" id="FQF-UN-ZsH"/>
-                        <outletCollection property="digitButtons" destination="nCa-cE-BTK" id="JyS-cP-KmN"/>
-                        <outletCollection property="operatorButtons" destination="FzQ-7I-4Sj" id="Dvr-oj-7YE"/>
-                        <outletCollection property="operatorButtons" destination="vTk-zF-aAO" id="LXJ-cB-Sge"/>
-                        <outletCollection property="operatorButtons" destination="vul-hF-tMD" id="bc5-hx-BjS"/>
-                        <outletCollection property="operatorButtons" destination="1sr-nY-7LN" id="15F-wv-OE6"/>
+                        <outletCollection property="digitButtons" destination="oBi-VO-wEs" collectionClass="NSMutableArray" id="ORb-lz-ydF"/>
+                        <outletCollection property="digitButtons" destination="C2f-Db-BQf" collectionClass="NSMutableArray" id="2mr-HO-Wt4"/>
+                        <outletCollection property="digitButtons" destination="XIp-Im-8WQ" collectionClass="NSMutableArray" id="Vvl-gP-fqM"/>
+                        <outletCollection property="digitButtons" destination="UKH-Ac-vZd" collectionClass="NSMutableArray" id="za3-g2-t7t"/>
+                        <outletCollection property="digitButtons" destination="mO2-ya-lE9" collectionClass="NSMutableArray" id="hI7-BO-Jnx"/>
+                        <outletCollection property="digitButtons" destination="Ay2-fo-B6T" collectionClass="NSMutableArray" id="hcZ-uz-KBa"/>
+                        <outletCollection property="digitButtons" destination="BYA-S4-ukB" collectionClass="NSMutableArray" id="Ckv-Re-Icm"/>
+                        <outletCollection property="digitButtons" destination="i9i-fg-QpP" collectionClass="NSMutableArray" id="u8E-k4-NTg"/>
+                        <outletCollection property="digitButtons" destination="9CO-Nn-Gs4" collectionClass="NSMutableArray" id="FQF-UN-ZsH"/>
+                        <outletCollection property="digitButtons" destination="nCa-cE-BTK" collectionClass="NSMutableArray" id="JyS-cP-KmN"/>
+                        <outletCollection property="operatorButtons" destination="FzQ-7I-4Sj" collectionClass="NSMutableArray" id="Dvr-oj-7YE"/>
+                        <outletCollection property="operatorButtons" destination="vTk-zF-aAO" collectionClass="NSMutableArray" id="LXJ-cB-Sge"/>
+                        <outletCollection property="operatorButtons" destination="vul-hF-tMD" collectionClass="NSMutableArray" id="bc5-hx-BjS"/>
+                        <outletCollection property="operatorButtons" destination="1sr-nY-7LN" collectionClass="NSMutableArray" id="15F-wv-OE6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgw-fS-0iX" userLabel="First Responder" sceneMemberID="firstResponder"/>

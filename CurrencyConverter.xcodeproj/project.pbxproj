@@ -13,6 +13,7 @@
 		E878A94C1DF1819500D0E600 /* CurrencyConverter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E878A94B1DF1819500D0E600 /* CurrencyConverter.storyboard */; };
 		E878A94E1DF19D1700D0E600 /* FlagImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E878A94D1DF19D1700D0E600 /* FlagImages.xcassets */; };
 		E878A9501DF1DC6500D0E600 /* CurrencyControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878A94F1DF1DC6500D0E600 /* CurrencyControler.swift */; };
+		E878A9521DF1E4D800D0E600 /* CurrencyBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878A9511DF1E4D800D0E600 /* CurrencyBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E878A94B1DF1819500D0E600 /* CurrencyConverter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CurrencyConverter.storyboard; sourceTree = "<group>"; };
 		E878A94D1DF19D1700D0E600 /* FlagImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FlagImages.xcassets; sourceTree = "<group>"; };
 		E878A94F1DF1DC6500D0E600 /* CurrencyControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyControler.swift; sourceTree = "<group>"; };
+		E878A9511DF1E4D800D0E600 /* CurrencyBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				E878A9421DF180B400D0E600 /* LaunchScreen.storyboard */,
 				E878A94B1DF1819500D0E600 /* CurrencyConverter.storyboard */,
 				E878A94F1DF1DC6500D0E600 /* CurrencyControler.swift */,
+				E878A9511DF1E4D800D0E600 /* CurrencyBox.swift */,
 				E878A9451DF180B400D0E600 /* Info.plist */,
 			);
 			path = CurrencyConverter;
@@ -142,6 +145,7 @@
 			files = (
 				E878A9501DF1DC6500D0E600 /* CurrencyControler.swift in Sources */,
 				E878A93A1DF180B400D0E600 /* AppDelegate.swift in Sources */,
+				E878A9521DF1E4D800D0E600 /* CurrencyBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
