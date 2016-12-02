@@ -117,6 +117,11 @@ extension UISetup {
         decimalButton.setTitle(decimalSign, for: .normal)
     }
     
+    func setupInitialCurrencies() {
+        self.sourceCurrencyCode = "USD"
+        self.targetCurrencyCode = "EUR"
+    }
+    
     func cleanupUI() {
         self.equalsButton.alpha = 0
         self.operatorButtons.forEach { (btn) in
@@ -144,6 +149,7 @@ extension ViewLifecycle {
         assignButtonTaps()
         configureDecimalButton()
         cleanupUI()
+        setupInitialCurrencies()
     }
 }
 
