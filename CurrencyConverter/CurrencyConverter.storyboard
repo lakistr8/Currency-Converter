@@ -284,7 +284,52 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enG-tG-bcx" userLabel="curRight">
                                         <rect key="frame" x="188" y="0.0" width="187" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELd-sX-3fw" userLabel="flagBox">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="63.5"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="eu" translatesAutoresizingMaskIntoConstraints="NO" id="Rwy-m5-k3I">
+                                                        <rect key="frame" x="94" y="0.0" width="93" height="63.5"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKN-Zj-h6L">
+                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="63.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Rwy-m5-k3I" secondAttribute="bottom" id="3nu-45-Aa8"/>
+                                                    <constraint firstItem="sKN-Zj-h6L" firstAttribute="leading" secondItem="ELd-sX-3fw" secondAttribute="leading" id="9v2-Ta-Wkw"/>
+                                                    <constraint firstItem="Rwy-m5-k3I" firstAttribute="leading" secondItem="sKN-Zj-h6L" secondAttribute="trailing" constant="1" id="DBC-dY-74X"/>
+                                                    <constraint firstItem="sKN-Zj-h6L" firstAttribute="centerY" secondItem="Rwy-m5-k3I" secondAttribute="centerY" id="MQG-Ak-jVa"/>
+                                                    <constraint firstItem="Rwy-m5-k3I" firstAttribute="top" secondItem="ELd-sX-3fw" secondAttribute="top" id="Qwe-FW-h6G"/>
+                                                    <constraint firstItem="sKN-Zj-h6L" firstAttribute="top" secondItem="ELd-sX-3fw" secondAttribute="top" id="R7E-v5-VhF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="sKN-Zj-h6L" secondAttribute="bottom" id="W9p-Cn-ube"/>
+                                                    <constraint firstItem="sKN-Zj-h6L" firstAttribute="width" secondItem="Rwy-m5-k3I" secondAttribute="width" id="nux-ai-pYg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Rwy-m5-k3I" secondAttribute="trailing" id="qcw-cH-hV1"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B92-4g-f8F">
+                                                <rect key="frame" x="0.0" y="64.5" width="187" height="63.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="B92-4g-f8F" firstAttribute="top" secondItem="ELd-sX-3fw" secondAttribute="bottom" constant="1" id="19Y-V3-60P"/>
+                                            <constraint firstItem="ELd-sX-3fw" firstAttribute="top" secondItem="enG-tG-bcx" secondAttribute="top" id="6Wt-wl-UAu"/>
+                                            <constraint firstAttribute="trailing" secondItem="ELd-sX-3fw" secondAttribute="trailing" id="GLc-NN-eHj"/>
+                                            <constraint firstAttribute="trailing" secondItem="B92-4g-f8F" secondAttribute="trailing" id="Mff-vy-XPz"/>
+                                            <constraint firstItem="B92-4g-f8F" firstAttribute="height" secondItem="ELd-sX-3fw" secondAttribute="height" id="N79-dJ-SxZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="B92-4g-f8F" secondAttribute="bottom" id="OHZ-yF-AJS"/>
+                                            <constraint firstItem="ELd-sX-3fw" firstAttribute="leading" secondItem="enG-tG-bcx" secondAttribute="leading" id="p0Y-0p-N7R"/>
+                                            <constraint firstItem="B92-4g-f8F" firstAttribute="leading" secondItem="enG-tG-bcx" secondAttribute="leading" id="qb9-Pe-NZv"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -372,6 +417,7 @@
     </scenes>
     <resources>
         <image name="background" width="130" height="222"/>
+        <image name="eu" width="16" height="16"/>
         <image name="rs" width="16" height="16"/>
     </resources>
 </document>
