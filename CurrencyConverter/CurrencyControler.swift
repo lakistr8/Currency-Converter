@@ -60,6 +60,14 @@ class CurrencyControler: UIViewController {
     
     @IBOutlet weak var leadingCurrencyBox: CurrencyBox!
     @IBOutlet weak var trailingCurrencyBox: CurrencyBox!
+    
+    var sourceCurrencyBox: CurrencyBox {
+        return leadingCurrencyBox
+    }
+    
+    var targetCurrencyBox: CurrencyBox {
+        return trailingCurrencyBox
+    }
 }
 
 
