@@ -103,7 +103,10 @@ extension UISetup {
     }
     
     func cleanupUI() {
-        
+        self.equalsButton.alpha = 0
+        self.operatorButtons.forEach { (btn) in
+            btn.alpha = 1
+        }
     }
     
 }
