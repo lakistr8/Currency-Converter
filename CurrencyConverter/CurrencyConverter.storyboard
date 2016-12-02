@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-242" y="161"/>
         </scene>
-        <!--View Controller-->
+        <!--Currency Controler-->
         <scene sceneID="GPc-IU-tmr">
             <objects>
-                <viewController id="RRu-WX-bwX" sceneMemberID="viewController">
+                <viewController id="RRu-WX-bwX" customClass="CurrencyControler" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cBv-4k-oX2"/>
                         <viewControllerLayoutGuide type="bottom" id="GDX-tI-ygV"/>
@@ -289,7 +289,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="187" height="63.5"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="eu" translatesAutoresizingMaskIntoConstraints="NO" id="Rwy-m5-k3I">
-                                                        <rect key="frame" x="94" y="0.0" width="93" height="63.5"/>
+                                                        <rect key="frame" x="94" y="0.0" width="93" height="64"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKN-Zj-h6L">
                                                         <rect key="frame" x="0.0" y="0.0" width="93" height="63.5"/>

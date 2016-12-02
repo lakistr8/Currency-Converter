@@ -17,6 +17,14 @@ class CurrencyControler: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = self.navigationItem.title?.uppercased()
     }
+}
+
+extension CurrencyControler : UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return false
+    }
+
 }
