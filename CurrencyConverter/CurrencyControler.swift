@@ -68,6 +68,10 @@ class CurrencyControler: UIViewController {
     var targetCurrencyBox: CurrencyBox {
         return trailingCurrencyBox
     }
+    
+    var sourceCurrencyCode : String!
+    var targetCurrencyCode : String!
+    var currencyRate : Double?
 }
 
 
