@@ -9,5 +9,10 @@
 import UIKit
 
 class CurrencyBox: UIView {
-
+    
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var flagImageView: UIImageView!
+    @IBOutlet weak var currencyCodeLabel: UILabel!
+    
+    
 }

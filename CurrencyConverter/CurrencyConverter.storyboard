@@ -295,6 +295,11 @@
                                             <constraint firstItem="kWT-Z4-foP" firstAttribute="top" secondItem="TNO-tn-rWc" secondAttribute="bottom" constant="1" id="p8h-pV-PRR"/>
                                             <constraint firstItem="TNO-tn-rWc" firstAttribute="leading" secondItem="37i-7D-5q5" secondAttribute="leading" id="xui-BX-T6N"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="currencyCodeLabel" destination="Inh-Xs-Hb3" id="upL-wQ-fVt"/>
+                                            <outlet property="flagImageView" destination="U0g-nx-yHk" id="wUn-hL-X6L"/>
+                                            <outlet property="textField" destination="kWT-Z4-foP" id="d3K-4z-97s"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enG-tG-bcx" userLabel="curRight" customClass="CurrencyBox" customModule="CurrencyConverter" customModuleProvider="target">
                                         <rect key="frame" x="188" y="0.0" width="187" height="128"/>
@@ -344,6 +349,11 @@
                                             <constraint firstItem="ELd-sX-3fw" firstAttribute="leading" secondItem="enG-tG-bcx" secondAttribute="leading" id="p0Y-0p-N7R"/>
                                             <constraint firstItem="B92-4g-f8F" firstAttribute="leading" secondItem="enG-tG-bcx" secondAttribute="leading" id="qb9-Pe-NZv"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="currencyCodeLabel" destination="sKN-Zj-h6L" id="VdC-P5-4Nl"/>
+                                            <outlet property="flagImageView" destination="Rwy-m5-k3I" id="eSX-qQ-CGN"/>
+                                            <outlet property="textField" destination="B92-4g-f8F" id="cLN-d1-ycM"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
