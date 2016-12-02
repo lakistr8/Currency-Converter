@@ -110,6 +110,9 @@ extension UISetup {
         self.operatorButtons.forEach { (btn) in
             btn.alpha = 1
         }
+        
+        self.leadingCurrencyBox.textField.text = nil
+        self.trailingCurrencyBox.textField.text = nil
     }
     
 }
