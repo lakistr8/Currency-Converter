@@ -57,6 +57,9 @@ class CurrencyControler: UIViewController {
     
     var firstOperand = 0.0
     var secondOperand = 0.0
+    
+    @IBOutlet weak var leadingCurrencyBox: CurrencyBox!
+    @IBOutlet weak var trailingCurrencyBox: CurrencyBox!
 }
 
 

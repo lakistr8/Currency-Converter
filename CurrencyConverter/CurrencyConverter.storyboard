@@ -439,6 +439,8 @@
                         <outlet property="decimalButton" destination="QOf-70-US1" id="DiK-su-4YM"/>
                         <outlet property="deleteButton" destination="HTX-FT-6zE" id="3bC-tE-APl"/>
                         <outlet property="equalsButton" destination="YZB-06-kmj" id="bER-1G-3rm"/>
+                        <outlet property="leadingCurrencyBox" destination="37i-7D-5q5" id="wWX-B0-URd"/>
+                        <outlet property="trailingCurrencyBox" destination="enG-tG-bcx" id="pEB-IA-98J"/>
                         <outletCollection property="digitButtons" destination="oBi-VO-wEs" collectionClass="NSMutableArray" id="ORb-lz-ydF"/>
                         <outletCollection property="digitButtons" destination="C2f-Db-BQf" collectionClass="NSMutableArray" id="2mr-HO-Wt4"/>
                         <outletCollection property="digitButtons" destination="XIp-Im-8WQ" collectionClass="NSMutableArray" id="Vvl-gP-fqM"/>
