@@ -84,6 +84,10 @@ extension UISetup {
         decimalButton.setTitle(decimalSign, for: .normal)
     }
     
+    func cleanupUI() {
+        
+    }
+    
 }
 
 
@@ -99,6 +103,7 @@ extension ViewLifecycle {
         
         assignButtonTargets()
         configureDecimalButton()
+        cleanupUI()
     }
 }
 
