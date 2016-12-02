@@ -14,6 +14,13 @@ class CurrencyControler: UIViewController {
         return .lightContent
     }
     
+    let formatter : NumberFormatter = {
+        let nf = NumberFormatter()
+        nf.numberStyle = .decimal
+        return nf
+    }()
+
+    
     
     @IBOutlet weak var decimalButton: UIButton!
     @IBAction func decimalButtonTapped(_ sender: UIButton) {
