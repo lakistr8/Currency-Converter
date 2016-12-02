@@ -175,6 +175,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOf-70-US1">
                                                 <rect key="frame" x="94" y="0.0" width="93" height="93"/>
                                                 <state key="normal" title="."/>
+                                                <connections>
+                                                    <action selector="decimalButtonTapped:" destination="RRu-WX-bwX" eventType="touchUpInside" id="prx-BP-G2P"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBi-VO-wEs">
                                                 <rect key="frame" x="188" y="0.0" width="93" height="93"/>
@@ -186,6 +189,9 @@
                                                     <constraint firstAttribute="width" secondItem="HTX-FT-6zE" secondAttribute="height" multiplier="1:1" id="VJC-UH-hTm"/>
                                                 </constraints>
                                                 <state key="normal" title="⌫"/>
+                                                <connections>
+                                                    <action selector="deleteButtonTapped:" destination="RRu-WX-bwX" eventType="touchUpInside" id="wAq-zW-xib"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -411,6 +417,10 @@
                     <navigationItem key="navigationItem" title="Currency Converter" id="JOQ-Ho-u0F">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="oHD-g0-llX"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="decimalButton" destination="QOf-70-US1" id="DiK-su-4YM"/>
+                        <outlet property="deleteButton" destination="HTX-FT-6zE" id="3bC-tE-APl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgw-fS-0iX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

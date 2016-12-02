@@ -13,6 +13,18 @@ class CurrencyControler: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    
+    @IBOutlet weak var decimalButton: UIButton!
+    @IBAction func decimalButtonTapped(_ sender: UIButton) {
+        
+    }
+    
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBAction func deleteButtonTapped(_ sender: UIButton) {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
