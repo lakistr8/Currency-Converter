@@ -46,6 +46,15 @@ class CurrencyControler: UIViewController {
 typealias UISetup = CurrencyControler
 extension UISetup {
     
+    func assignButtonTaps() {
+        for btn in digitButtons {
+            btn.addTarget(self, action: #selector(CurrencyControler.digitButtonTapped(_:)), for: .touchUpInside)
+        }
+        for btn in operatorButtons {
+            btn.addTarget(self, action: #selector(CurrencyControler.operationButtonTapped(_:)), for: .touchUpInside)
+        }
+    }
+    
     func assignButtonTargets() {
         let allButtons = digitButtons + operatorButtons + [decimalButton, deleteButton]
         for btn in allButtons {
