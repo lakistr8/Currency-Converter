@@ -15,7 +15,7 @@
         <scene sceneID="hgL-WA-ka2">
             <objects>
                 <navigationController id="bzQ-9s-dqV" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YUD-sg-GtG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" id="YUD-sg-GtG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-242" y="161"/>
         </scene>
-        <!--Currency Controler-->
+        <!--Currency Converter-->
         <scene sceneID="GPc-IU-tmr">
             <objects>
                 <viewController id="RRu-WX-bwX" customClass="CurrencyControler" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
@@ -408,7 +408,9 @@
                             <constraint firstItem="6c1-X0-Yhx" firstAttribute="leading" secondItem="OrM-vi-fzK" secondAttribute="leading" id="yy6-hT-khb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JOQ-Ho-u0F"/>
+                    <navigationItem key="navigationItem" title="Currency Converter" id="JOQ-Ho-u0F">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="oHD-g0-llX"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgw-fS-0iX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
