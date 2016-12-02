@@ -11,6 +11,7 @@
 		E878A9411DF180B400D0E600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E878A9401DF180B400D0E600 /* Assets.xcassets */; };
 		E878A9441DF180B400D0E600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E878A9421DF180B400D0E600 /* LaunchScreen.storyboard */; };
 		E878A94C1DF1819500D0E600 /* CurrencyConverter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E878A94B1DF1819500D0E600 /* CurrencyConverter.storyboard */; };
+		E878A94E1DF19D1700D0E600 /* FlagImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E878A94D1DF19D1700D0E600 /* FlagImages.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		E878A9431DF180B400D0E600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E878A9451DF180B400D0E600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E878A94B1DF1819500D0E600 /* CurrencyConverter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CurrencyConverter.storyboard; sourceTree = "<group>"; };
+		E878A94D1DF19D1700D0E600 /* FlagImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FlagImages.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				E878A9391DF180B400D0E600 /* AppDelegate.swift */,
 				E878A9401DF180B400D0E600 /* Assets.xcassets */,
+				E878A94D1DF19D1700D0E600 /* FlagImages.xcassets */,
 				E878A9421DF180B400D0E600 /* LaunchScreen.storyboard */,
 				E878A94B1DF1819500D0E600 /* CurrencyConverter.storyboard */,
 				E878A9451DF180B400D0E600 /* Info.plist */,
@@ -123,6 +126,7 @@
 				E878A9441DF180B400D0E600 /* LaunchScreen.storyboard in Resources */,
 				E878A9411DF180B400D0E600 /* Assets.xcassets in Resources */,
 				E878A94C1DF1819500D0E600 /* CurrencyConverter.storyboard in Resources */,
+				E878A94E1DF19D1700D0E600 /* FlagImages.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
