@@ -274,6 +274,13 @@ extension Internal {
             firstOperand = 0
             secondOperand = 0
             
+            UIView.animate(withDuration: 0.4, animations: {
+                self.equalsButton.alpha = 0
+                self.operatorButtons.forEach { (btn) in
+                    btn.alpha = 1
+                }
+            })
+            
         } else if activeOperation != .none {
             
             //	pritisnut je neki od aritm. operatora
@@ -285,6 +292,13 @@ extension Internal {
             firstOperand = num
             //	obriši prikaz i time se spremi za unos drugog operanda
             sourceCurrencyBox.amountText = nil
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.equalsButton.alpha = 1
+                self.operatorButtons.forEach { (btn) in
+                    btn.alpha = 0
+                }
+            })
         }
     }
 }
