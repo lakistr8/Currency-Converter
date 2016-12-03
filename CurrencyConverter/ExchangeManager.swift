@@ -9,8 +9,14 @@
 import Foundation
 
 
+struct Currency {
+    let code: String
+    var rate: Double?
+    var lastUpdated: Date?
+}
+
+
 final class ExchangeManager {
-    
     
     static let shared = ExchangeManager()
     private init() {
