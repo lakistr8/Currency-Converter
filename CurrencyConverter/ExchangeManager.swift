@@ -55,12 +55,14 @@ final class ExchangeManager {
             
         }
         
-        fetchCurrencyRate(for: sourceCC, completionHandler: completionHandler)
+        fetchCurrencyRate(from: sourceCC,
+                          to: targetCC,
+                          completionHandler: completionHandler)
     }
     
     private let baseURL = "https://download.finance.yahoo.com/d/quotes.csv?f=sb&s="
     
-    private func singleConversionURL(_ sourceCurrency: String,
+    fileprivate func singleConversionURL(_ sourceCurrency: String,
                                      targetCurrency: String  ) -> URL {
         
         var s = baseURL;
@@ -97,12 +99,11 @@ extension ExchangeManager {
         return targetRate / sourceRate
     }
     
-    fileprivate func fetchCurrencyRate(for currency: String,
+    fileprivate func fetchCurrencyRate(from sourceCC: String,
+                                       to targetCC: String,
                                        completionHandler: @escaping (Double?, ExchangeError?) -> Void ) {
         
-        //	create URL to call
-        let currencies = "\(baseCurrency)\(currency)=X"
-        guard let url = URL(string: "https://download.finance.yahoo.com/d/quotes.csv?f=sb&s="+currencies) else { return }
+        let url = singleConversionURL(sourceCC, targetCurrency: targetCC)
         
         //	using shared URL session, make a data task..
         let task = URLSession.shared.dataTask(with: url) {
