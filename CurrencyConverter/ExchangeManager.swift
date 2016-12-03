@@ -11,8 +11,12 @@ import Foundation
 
 struct Currency {
     let code: String
-    var rate: Double?
-    var lastUpdated: Date?
+    fileprivate(set) var rate: Double?
+    fileprivate(set) var lastUpdated: Date?
+    
+    init(code: String) {
+        self.code = code
+    }
 }
 
 
