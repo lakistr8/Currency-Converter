@@ -36,8 +36,7 @@ extension FileManager {
     ///	Remember to delete those files when you are done with them so that they do not continue to consume space on the user’s device.
     ///	The system will periodically purge these files when your app is not running; therefore, you cannot rely on these files persisting after your app terminates.
     var temporaryURL : URL? {
-        let paths =	urls(for: .itemReplacementDirectory, in: .userDomainMask)
-        return paths.first
+        return homeURL?.appendingPathComponent("tmp", isDirectory: true)
     }
     
     ///	Put data cache files in the `Library/Caches/` directory.
@@ -54,19 +53,19 @@ extension FileManager {
     
     func printCommonURLs() {
         if let url = homeURL {
-            print("Home: \(url)")
+            print("Home:\n\(url)\n")
         }
         if let url = documentsURL {
-            print("Documents: \(url)")
+            print("Documents:\n\(url)\n")
         }
         if let url = applicationSupportURL {
-            print("ApplicationSupport: \(url)")
+            print("ApplicationSupport:\n\(url)\n")
         }
         if let url = temporaryURL {
-            print("Tmp: \(url)")
+            print("Tmp:\n\(url)\n")
         }
         if let url = cacheURL {
-            print("Caches: \(url)")
+            print("Caches:\n\(url)\n")
         }
     }
 }
