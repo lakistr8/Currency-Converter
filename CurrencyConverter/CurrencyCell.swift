@@ -9,6 +9,10 @@
 import UIKit
 
 class CurrencyCell: UITableViewCell {
+    
+    @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var currencyLabel: UILabel!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +23,20 @@ class CurrencyCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure(withCurrencyCode currencyCode: String) {
+        
+        //	update label
+        currencyLabel.text = currencyCode
+        
+        //	update flag image, using Locale framework
+        guard let countryCode = Locale.countryCode(forCurrencyCode: currencyCode) else {
+            iconView.image = nil
+            return
+        }
+        
+        iconView.image = UIImage(named: countryCode.lowercased())
     }
 
 }

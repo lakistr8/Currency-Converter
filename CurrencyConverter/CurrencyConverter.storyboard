@@ -500,6 +500,10 @@
                                         <constraint firstAttribute="topMargin" secondItem="Du0-U0-OXJ" secondAttribute="top" id="dOM-WR-NKB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="currencyLabel" destination="5Tj-YV-lk3" id="cXG-OL-zXE"/>
+                                    <outlet property="iconView" destination="Du0-U0-OXJ" id="MUW-4L-lHJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
