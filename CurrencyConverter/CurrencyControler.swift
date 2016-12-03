@@ -69,8 +69,16 @@ class CurrencyControler: UIViewController {
         return trailingCurrencyBox
     }
     
-    var sourceCurrencyCode : String!
-    var targetCurrencyCode : String!
+    var sourceCurrencyCode : String! {
+        didSet {
+            sourceCurrencyBox.configure(withCurrencyCode: sourceCurrencyCode)
+        }
+    }
+    var targetCurrencyCode : String! {
+        didSet {
+            targetCurrencyBox.configure(withCurrencyCode: targetCurrencyCode)
+        }
+    }
     var currencyRate : Double?
 }
 
