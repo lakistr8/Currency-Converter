@@ -154,13 +154,13 @@ extension ExchangeManager {
                 
             }
             
-            
-            
-            
-            
-            let rate = 0.0
-            let error: ExchangeError? = nil
-            completionHandler(rate, error)
+            do {
+                let rate = try self.convert(from: sourceCC, to: targetCC)
+                completionHandler(rate, nil)
+                return
+            } catch(let conversionError) {
+                completionHandler(nil, conversionError as? ExchangeError)
+            }
             
         }
         //	and execute it
