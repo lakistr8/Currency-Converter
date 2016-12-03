@@ -156,17 +156,17 @@ extension ViewLifecycle {
 typealias Internal = CurrencyControler
 extension Internal {
     
-    func validateOperandInput() -> Double? {
-        //		guard let numString = resultField.text else {
-        //			return nil
-        //		}
-        //
-        //		let num = formatter.number(from: numString)?.doubleValue
-        //		return num
-        return 0
-    }
-    
-    func digitButtonTapped(_ sender: UIButton) {
+//    func validateOperandInput() -> Double? {
+//        //		guard let numString = resultField.text else {
+//        //			return nil
+//        //		}
+//        //
+//        //		let num = formatter.number(from: numString)?.doubleValue
+//        //		return num
+//        return 0
+//    }
+//    
+//    func digitButtonTapped(_ sender: UIButton) {
 //        guard let numString = sender.title(for: .normal) else { return }
 //        var value = resultField.text ?? ""
 //
@@ -176,9 +176,9 @@ extension Internal {
 //        
 //        value += numString
 //        resultField.text = value
-    }
+//    }
     
-    func operationButtonTapped(_ sender: UIButton) {
+//    func operationButtonTapped(_ sender: UIButton) {
 //        var isEquals = false
 //        
 //        
@@ -244,7 +244,7 @@ extension Internal {
 //        }
 //        
 //        self.didUntouchButton(sender)
-    }
+//    }
 }
 
 

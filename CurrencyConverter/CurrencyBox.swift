@@ -14,5 +14,10 @@ class CurrencyBox: UIView {
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var currencyCodeLabel: UILabel!
     
+    func configure(withCurrencyCode currencyCode:String) {
+        
+        currencyCodeLabel.text = currencyCode
+        
+    }
     
 }
