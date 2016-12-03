@@ -22,7 +22,17 @@ class CurrencyPicker: UITableViewController {
     
     var dataSource : [String] {
         let baseArr = Locale.commonISOCurrencyCodes
+        //	if search string is populated, then we need to filter the result
+        if let str = searchString {
+            if str.characters.count > 0 {
+                return baseArr.filter( {$0.localizedCaseInsensitiveContains(str)} )
+            }
+        }
         return baseArr
+    }
+    
+    deinit {
+        searchController?.view.removeFromSuperview()
     }
 
 
@@ -66,7 +76,14 @@ extension CurrencyPicker {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let currencyCode = dataSource[indexPath.row]
-        delegate?.currencyPicker(controller: self, didSelect: currencyCode)
+        
+        if let _ = presentedViewController {
+            dismiss(animated: false) {
+                self.delegate?.currencyPicker(controller: self, didSelect: currencyCode)
+            }
+        } else {
+            delegate?.currencyPicker(controller: self, didSelect: currencyCode)
+        }
     }
 }
 

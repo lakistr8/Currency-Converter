@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E854F58E1DF2E2AD008E2564 /* ExchangeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854F58D1DF2E2AD008E2564 /* ExchangeManager.swift */; };
 		E878A93A1DF180B400D0E600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878A9391DF180B400D0E600 /* AppDelegate.swift */; };
 		E878A9411DF180B400D0E600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E878A9401DF180B400D0E600 /* Assets.xcassets */; };
 		E878A9441DF180B400D0E600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E878A9421DF180B400D0E600 /* LaunchScreen.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E854F58D1DF2E2AD008E2564 /* ExchangeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeManager.swift; sourceTree = "<group>"; };
 		E878A9361DF180B400D0E600 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E878A9391DF180B400D0E600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E878A9401DF180B400D0E600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				E881A5751DF2D11A0050AAE6 /* UserDefaults-Extension.swift */,
 				E881A5771DF2D5F30050AAE6 /* CurrencyPicker.swift */,
 				E881A5791DF2D63F0050AAE6 /* CurrencyCell.swift */,
+				E854F58D1DF2E2AD008E2564 /* ExchangeManager.swift */,
 				E878A9451DF180B400D0E600 /* Info.plist */,
 			);
 			path = CurrencyConverter;
@@ -161,6 +164,7 @@
 				E878A9521DF1E4D800D0E600 /* CurrencyBox.swift in Sources */,
 				E881A57A1DF2D63F0050AAE6 /* CurrencyCell.swift in Sources */,
 				E881A5761DF2D11A0050AAE6 /* UserDefaults-Extension.swift in Sources */,
+				E854F58E1DF2E2AD008E2564 /* ExchangeManager.swift in Sources */,
 				E881A5741DF2C4890050AAE6 /* Locale-Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
