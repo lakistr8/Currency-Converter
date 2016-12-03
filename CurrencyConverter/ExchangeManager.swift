@@ -27,7 +27,7 @@ final class ExchangeManager {
         populateRates()
     }
     
-    private let baseCurrency = "USD"
+    fileprivate let baseCurrency = "USD"
     private var rates = [String: Currency]()
     
     func populateRates() {
@@ -46,4 +46,25 @@ final class ExchangeManager {
         return targetRate / sourceRate
     }
 
+}
+
+extension ExchangeManager {
+    
+    fileprivate func fetchCurrencyRate(for currency: String) {
+        
+        //	create URL to call
+        let currencies = "\(baseCurrency)\(currency)=X"
+        guard let url = URL(string: "https://download.finance.yahoo.com/d/quotes.csv?f=sb&s="+currencies) else { return }
+        
+        //	using shared URL session, make a data task..
+        let task = URLSession.shared.dataTask(with: url) {
+            data, urlResponse, error in
+            
+            //	process the returned stuff, now
+            
+        }
+        //	and execute it
+        task.resume()
+        
+    }
 }
