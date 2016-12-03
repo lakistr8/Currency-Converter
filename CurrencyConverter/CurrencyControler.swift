@@ -84,11 +84,13 @@ class CurrencyControler: UIViewController {
     var sourceCurrencyCode : String! {
         didSet {
             sourceCurrencyBox.configure(withCurrencyCode: sourceCurrencyCode)
+            UserDefaults.sourceCurrencyCode = sourceCurrencyCode
         }
     }
     var targetCurrencyCode : String! {
         didSet {
             targetCurrencyBox.configure(withCurrencyCode: targetCurrencyCode)
+            UserDefaults.targetCurrencyCode = targetCurrencyCode
         }
     }
     var currencyRate : Double?
@@ -159,8 +161,8 @@ extension UISetup {
     }
     
     func setupInitialCurrencies() {
-        self.sourceCurrencyCode = "USD"
-        self.targetCurrencyCode = "EUR"
+        self.sourceCurrencyCode = UserDefaults.sourceCurrencyCode ?? "USD"
+        self.targetCurrencyCode = UserDefaults.targetCurrencyCode ?? "EUR"
     }
     
     func cleanupUI() {
