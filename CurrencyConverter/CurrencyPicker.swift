@@ -17,6 +17,9 @@ class CurrencyPicker: UITableViewController {
     
     weak var delegate: CurrencyPickerControllerDelegate? = nil
     
+    var searchString : String?
+    var searchController: UISearchController?
+    
     var dataSource : [String] {
         let baseArr = Locale.commonISOCurrencyCodes
         return baseArr
@@ -64,5 +67,33 @@ extension CurrencyPicker {
         
         let currencyCode = dataSource[indexPath.row]
         delegate?.currencyPicker(controller: self, didSelect: currencyCode)
+    }
+}
+
+//MARK: - SEARCH
+
+extension CurrencyPicker: UISearchResultsUpdating {
+    
+    func setupSearch() {
+        
+        searchController = {
+            let sc = UISearchController(searchResultsController: nil)
+            sc.searchResultsUpdater = self
+            //
+            sc.hidesNavigationBarDuringPresentation = false
+            sc.dimsBackgroundDuringPresentation = false
+            
+            //
+            sc.searchBar.searchBarStyle = UISearchBarStyle.prominent
+            self.navigationItem.titleView = sc.searchBar
+            sc.searchBar.sizeToFit()
+            
+            return sc
+        }()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        self.searchString = searchController.searchBar.text
+        self.tableView.reloadData()
     }
 }
