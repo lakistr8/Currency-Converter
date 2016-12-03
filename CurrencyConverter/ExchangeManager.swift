@@ -103,7 +103,10 @@ final class ExchangeManager {
     
     func populateRates() {
         for cc in Locale.commonISOCurrencyCodes {
-            rates[cc] = Currency(code: cc)
+            //	don't override stuff already restored with restoreRates()
+            if rates[cc] == nil {
+                rates[cc] = Currency(code: cc)
+            }
         }
     }
     
@@ -142,6 +145,18 @@ final class ExchangeManager {
         s += niz.joined(separator: ",")
         
         return URL(string: s)!
+    }
+    
+    private let storageURL = FileManager.default.applicationSupportURL
+    
+    func saveRates() {
+        //	save only objects that have rate nono-nil
+        
+    }
+    
+    func restoreRates() {
+        //	restore from the file, and save into self.rates dictionary
+        
     }
 }
 
