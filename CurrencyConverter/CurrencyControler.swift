@@ -70,6 +70,8 @@ class CurrencyControler: UIViewController {
     var firstOperand = 0.0
     var secondOperand = 0.0
     
+    var changeCurrencyBox : CurrencyBox? = nil
+    
     @IBOutlet weak var leadingCurrencyBox: CurrencyBox!
     @IBOutlet weak var trailingCurrencyBox: CurrencyBox!
     
@@ -324,7 +326,7 @@ extension CurrencyControler : UITextFieldDelegate {
 extension CurrencyControler: CurrencyBoxDelegate {
     
     func currencyBoxInitiatedChange(_ currencyBox: CurrencyBox) {
-        func currencyPicker(controller: CurrencyPickerController, didSelect currencyCode: String) {
+        func currencyPicker(controller: CurrencyPicker, didSelect currencyCode: String) {
             //	ok, now update the currency...ehm, which box?
         }
     }
