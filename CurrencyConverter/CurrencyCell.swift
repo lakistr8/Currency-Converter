@@ -16,7 +16,9 @@ class CurrencyCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        currencyLabel.text = nil
+        iconView.image = nil
+        currencyLabel.textColor = .white
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
