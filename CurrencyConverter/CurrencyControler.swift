@@ -47,11 +47,14 @@ class CurrencyControler: UIViewController {
         
     }
     
+    var buttonOriginalBackgroundColor: UIColor?
+    
     enum ArithmeticOperation {
         case none
         case add, subtract, multiply, divide
         case equals
     }
+    
     
     var activeOperation = ArithmeticOperation.none
     
@@ -107,16 +110,37 @@ extension UISetup {
     }
     
     func didTouchButton(_ sender: UIButton) {
-        //		guard let bgColor = sender.backgroundColor else { return }
-        //		originalBackgroundColor = bgColor
-        //		let newColor = bgColor.withAlphaComponent(0.96)
-        //		sender.backgroundColor = newColor
+        buttonOriginalBackgroundColor = sender.backgroundColor
+        
+        //	first, if there is no color, then use very transparent black
+        guard let _ = sender.backgroundColor else {
+            sender.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            return
+        }
+        
+        //	Since buttons backgrounds are already partially transparent,
+        //	we need to increase the alpha part, in order to visualize tapping
+        
+        //	here's a way to extract RGBA components from the UIColor
+        //	setup default (black)
+        var r : CGFloat = 0
+        var g : CGFloat = 0
+        var b : CGFloat = 0
+        //	and use 20% opacity
+        var a : CGFloat = 0.2
+        //	this method will populate the components above using given UIColor value
+        guard let _ = sender.backgroundColor?.getRed(&r, green: &g, blue: &b, alpha: &a) else {
+            //	if extraction fails, then fall back to black, as above
+            sender.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            return
+        }
+        //	if it worked, then setup using double alpha
+        sender.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: a*2)
     }
     
     func didUntouchButton(_ sender: UIButton) {
-        //		guard let bgColor = originalBackgroundColor else { return }
-        //		sender.backgroundColor = bgColor
-        //		originalBackgroundColor = nil
+        sender.backgroundColor = buttonOriginalBackgroundColor
+        buttonOriginalBackgroundColor = nil
     }
     
     func configureDecimalButton() {
