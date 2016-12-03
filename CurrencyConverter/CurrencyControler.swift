@@ -175,6 +175,11 @@ extension UISetup {
         self.trailingCurrencyBox.textField.text = nil
     }
     
+    func setupCurrencyBoxes() {
+        sourceCurrencyBox.delegate = self
+        targetCurrencyBox.delegate = self
+    }
+    
 }
 
 
@@ -193,6 +198,7 @@ extension ViewLifecycle {
         configureDecimalButton()
         cleanupUI()
         setupInitialCurrencies()
+        setupCurrencyBoxes()
     }
 }
 
@@ -313,4 +319,11 @@ extension CurrencyControler : UITextFieldDelegate {
         return false
     }
 
+}
+
+extension CurrencyControler: CurrencyBoxDelegate {
+    
+    func currencyBoxInitiatedChange(_ currencyBox: CurrencyBox) {
+        
+    }
 }
