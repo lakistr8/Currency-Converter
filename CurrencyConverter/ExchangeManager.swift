@@ -60,6 +60,36 @@ struct Currency {
     }
 }
 
+extension Currency {
+    
+    enum Keys: String {
+        case code
+        case rate
+        case date
+    }
+    
+    init?(with dictionary: Dictionary<String, Any>) {
+        guard let code = dictionary[Keys.code.rawValue] as? String else { return nil }
+        
+        self.code = code
+        rate = dictionary[Keys.rate.rawValue] as? Double
+        lastUpdated = dictionary[Keys.date.rawValue] as? Date
+    }
+    
+    var dictionary: Dictionary<String, Any> {
+        var dict = [String: Any]()
+        
+        dict[Keys.code.rawValue] = code
+        if let rate = rate {
+            dict[Keys.rate.rawValue] = rate
+        }
+        if let date = lastUpdated {
+            dict[Keys.date.rawValue] = date
+        }
+        
+        return dict
+    }
+}
 
 final class ExchangeManager {
     
