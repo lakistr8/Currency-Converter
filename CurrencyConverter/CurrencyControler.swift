@@ -324,6 +324,8 @@ extension CurrencyControler : UITextFieldDelegate {
 extension CurrencyControler: CurrencyBoxDelegate {
     
     func currencyBoxInitiatedChange(_ currencyBox: CurrencyBox) {
-        
+        func currencyPicker(controller: CurrencyPickerController, didSelect currencyCode: String) {
+            //	ok, now update the currency...ehm, which box?
+        }
     }
 }
