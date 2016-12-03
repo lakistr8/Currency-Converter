@@ -213,6 +213,23 @@ extension ViewLifecycle {
 typealias Internal = CurrencyControler
 extension Internal {
     
+    func updateConversionRate() {
+        
+        ExchangeManager.shared.rate(for: sourceCurrencyCode, versus: targetCurrencyCode) {
+            (returnedRate, error) in
+            
+            if let err = error {
+                //				switch err {
+                //				case .missingRate(let cc):
+                //				}
+                return
+            }
+            
+            self.currencyRate = returnedRate
+        }
+        
+    }
+    
     func validateOperandInput() -> Double? {
         guard let numString = sourceCurrencyBox.amountText else {
             return nil
