@@ -27,6 +27,14 @@ class CurrencyControler: UIViewController {
         defer {
             self.didUntouchButton(sender)
         }
+        guard let numString = sender.title(for: .normal) else { return }
+        var value = sourceCurrencyBox.amountText ?? ""
+        
+        if value.contains(numString) {
+            return
+        }
+        value += numString
+        sourceCurrencyBox.amountText = value
     }
     
     
@@ -35,25 +43,18 @@ class CurrencyControler: UIViewController {
         defer {
             self.didUntouchButton(sender)
         }
+        var value = sourceCurrencyBox.amountText ?? ""
+        guard value.characters.count > 0 else { return }
+        
+        var chars = value.characters
+        chars.removeLast()
+        sourceCurrencyBox.amountText = String(chars)
     }
     
     
     @IBOutlet weak var equalsButton: UIButton!
-    
-    @IBOutlet var operatorButtons: [UIButton]!
-    func operationButtonTapped(_ sender: UIButton) {
-        defer {
-            self.didUntouchButton(sender)
-        }
-    }
-    
-    
     @IBOutlet var digitButtons: [UIButton]!
-    func digitButtonTapped(_ sender: UIButton) {
-        defer {
-            self.didUntouchButton(sender)
-        }
-    }
+    @IBOutlet var operatorButtons: [UIButton]!
     
     var buttonOriginalBackgroundColor: UIColor?
     
@@ -196,103 +197,98 @@ extension ViewLifecycle {
 typealias Internal = CurrencyControler
 extension Internal {
     
-//    func validateOperandInput() -> Double? {
-//        //		guard let numString = resultField.text else {
-//        //			return nil
-//        //		}
-//        //
-//        //		let num = formatter.number(from: numString)?.doubleValue
-//        //		return num
-//        return 0
-//    }
-//    
-//    func digitButtonTapped(_ sender: UIButton) {
-//    defer {
-//    self.didUntouchButton(sender)
-//    }
-//        guard let numString = sender.title(for: .normal) else { return }
-//        var value = resultField.text ?? ""
-//
-//        defer {
-//            self.didUntouchButton(sender)
-//        }
-//        
-//        value += numString
-//        resultField.text = value
-//    }
+    func validateOperandInput() -> Double? {
+        guard let numString = sourceCurrencyBox.amountText else {
+            return nil
+        }
+        
+        let num = formatter.number(from: numString)?.doubleValue
+        return num
+    }
     
-//    func operationButtonTapped(_ sender: UIButton) {
-//    
-//    defer {
-//    self.didUntouchButton(sender)
-//    }
-//        var isEquals = false
-//        
-//        
-//        guard let caption = sender.title(for: .normal) else {
-//            fatalError("Received operator button tap rom button with no caption on it")
-//        }
-//        
-//        
-//        switch caption {
-//        case "+":
-//            activeOperation = .add
-//        case "-":
-//            activeOperation = .subtract
-//        case "×":
-//            activeOperation = .multiply
-//        case "÷":
-//            activeOperation = .divide
-//        case "=":
-//            isEquals = true
-//        default:
-//            activeOperation = .none
-//        }
-//        
-//        if (isEquals) {
-//            
-//            guard let num = validateOperandInput() else {
-//                resultField.text = nil
-//                return
-//            }
-//            secondOperand = num
-//            
-//            
-//            var rez = firstOperand
-//            switch activeOperation {
-//            case .add:
-//                rez += secondOperand
-//            case .subtract:
-//                rez -= secondOperand
-//            case .multiply:
-//                rez *= secondOperand
-//            case .divide:
-//                rez /= secondOperand
-//            default:
-//                break
-//            }
-//            
-//            resultField.text = formatter.string(for: rez)
-//            
-//            
-//            firstOperand = 0
-//            secondOperand = 0
-//            
-//        } else if activeOperation != .none {
-//            
-//            
-//            guard let num = validateOperandInput() else {
-//                resultField.text = nil
-//                return
-//            }
-//            firstOperand = num
-//            
-//            resultField.text = nil
-//        }
-//        
-//        self.didUntouchButton(sender)
-//    }
+    func digitButtonTapped(_ sender: UIButton) {
+        defer {
+            self.didUntouchButton(sender)
+        }
+        guard let numString = sender.title(for: .normal) else { return }
+        var value = sourceCurrencyBox.amountText ?? ""
+        
+        value += numString
+        sourceCurrencyBox.amountText = value
+    }
+    
+    func operationButtonTapped(_ sender: UIButton) {
+        defer {
+            self.didUntouchButton(sender)
+        }
+        var isEquals = false
+        
+        //	dohvati šta piše na buttonu
+        guard let caption = sender.title(for: .normal) else {
+            fatalError("Received operator button tap from button with no caption on it")
+        }
+        
+        //	pa podesi vrednost prema tome
+        switch caption {
+        case "+":
+            activeOperation = .add
+        case "-":
+            activeOperation = .subtract
+        case "×":
+            activeOperation = .multiply
+        case "÷":
+            activeOperation = .divide
+        case "=":
+            isEquals = true
+        default:
+            activeOperation = .none
+        }
+        
+        if (isEquals) {
+            //	pritisnut je button =
+            //	to znači da je unet drugi operand
+            guard let num = validateOperandInput() else {
+                sourceCurrencyBox.amountText = nil
+                return
+            }
+            secondOperand = num
+            
+            //	sada izračunaj operaciju
+            var rez = firstOperand
+            switch activeOperation {
+            case .add:
+                rez += secondOperand
+            case .subtract:
+                rez -= secondOperand
+            case .multiply:
+                rez *= secondOperand
+            case .divide:
+                rez /= secondOperand
+            default:
+                break
+            }
+            //	i ispiši rezultat u text fieldu
+            sourceCurrencyBox.amountText = formatter.string(for: rez)
+            
+            //	clear-out placeholders
+            firstOperand = 0
+            secondOperand = 0
+            
+        } else if activeOperation != .none {
+            
+            //	pritisnut je neki od aritm. operatora
+            //	to znači da je unet prvi operand
+            guard let num = validateOperandInput() else {
+                sourceCurrencyBox.amountText = nil
+                return
+            }
+            firstOperand = num
+            //	obriši prikaz i time se spremi za unos drugog operanda
+            sourceCurrencyBox.amountText = nil
+        }
+    }
 }
+
 
 
 extension CurrencyControler : UITextFieldDelegate {

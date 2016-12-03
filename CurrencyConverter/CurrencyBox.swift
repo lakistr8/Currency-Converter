@@ -14,12 +14,18 @@ class CurrencyBox: UIView {
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var currencyCodeLabel: UILabel!
     
-    func configure(withCurrencyCode currencyCode: String) {
+    var amountText: String? {
+        get {
+            return textField.text
+        }
+        set(str) {
+            textField.text = str
+        }
+    }
     
-     
+    func configure(withCurrencyCode currencyCode: String) {
         currencyCodeLabel.text = currencyCode
-        
-     
+
         guard let countryCode = Locale.countryCode(forCurrencyCode: currencyCode) else {
             flagImageView.image = nil
             return
