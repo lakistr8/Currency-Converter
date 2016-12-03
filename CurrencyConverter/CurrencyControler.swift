@@ -26,6 +26,7 @@ class CurrencyControler: UIViewController {
     @IBAction func decimalButtonTapped(_ sender: UIButton) {
         defer {
             self.didUntouchButton(sender)
+            updateConversionPanel()
         }
         guard let numString = sender.title(for: .normal) else { return }
         var value = sourceCurrencyBox.amountText ?? ""
@@ -42,6 +43,7 @@ class CurrencyControler: UIViewController {
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         defer {
             self.didUntouchButton(sender)
+            updateConversionPanel()
         }
         var value = sourceCurrencyBox.amountText ?? ""
         guard value.characters.count > 0 else { return }
@@ -215,6 +217,15 @@ extension ViewLifecycle {
 typealias Internal = CurrencyControler
 extension Internal {
     
+    func updateConversionPanel() {
+        guard let amountText = sourceCurrencyBox.amountText else { return }
+        guard let amount = formatter.number(from: amountText)?.doubleValue else { return }
+        guard let rate = currencyRate else { return }
+        
+        let result = amount * rate
+        targetCurrencyBox.amountText = formatter.string(for: result)
+    }
+    
     func updateConversionRate() {
         
         ExchangeManager.shared.rate(for: sourceCurrencyCode, versus: targetCurrencyCode) {
@@ -244,6 +255,7 @@ extension Internal {
     func digitButtonTapped(_ sender: UIButton) {
         defer {
             self.didUntouchButton(sender)
+            updateConversionPanel()
         }
         guard let numString = sender.title(for: .normal) else { return }
         var value = sourceCurrencyBox.amountText ?? ""
@@ -255,6 +267,7 @@ extension Internal {
     func operationButtonTapped(_ sender: UIButton) {
         defer {
             self.didUntouchButton(sender)
+            updateConversionPanel()
         }
         var isEquals = false
         
