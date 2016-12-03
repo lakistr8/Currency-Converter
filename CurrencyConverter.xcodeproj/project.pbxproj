@@ -16,6 +16,7 @@
 		E878A9521DF1E4D800D0E600 /* CurrencyBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878A9511DF1E4D800D0E600 /* CurrencyBox.swift */; };
 		E881A5741DF2C4890050AAE6 /* Locale-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881A5731DF2C4890050AAE6 /* Locale-Extension.swift */; };
 		E881A5761DF2D11A0050AAE6 /* UserDefaults-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881A5751DF2D11A0050AAE6 /* UserDefaults-Extension.swift */; };
+		E881A5781DF2D5F30050AAE6 /* CurrencyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881A5771DF2D5F30050AAE6 /* CurrencyPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E878A9511DF1E4D800D0E600 /* CurrencyBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyBox.swift; sourceTree = "<group>"; };
 		E881A5731DF2C4890050AAE6 /* Locale-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locale-Extension.swift"; sourceTree = "<group>"; };
 		E881A5751DF2D11A0050AAE6 /* UserDefaults-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults-Extension.swift"; sourceTree = "<group>"; };
+		E881A5771DF2D5F30050AAE6 /* CurrencyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				E878A9511DF1E4D800D0E600 /* CurrencyBox.swift */,
 				E881A5731DF2C4890050AAE6 /* Locale-Extension.swift */,
 				E881A5751DF2D11A0050AAE6 /* UserDefaults-Extension.swift */,
+				E881A5771DF2D5F30050AAE6 /* CurrencyPicker.swift */,
 				E878A9451DF180B400D0E600 /* Info.plist */,
 			);
 			path = CurrencyConverter;
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E881A5781DF2D5F30050AAE6 /* CurrencyPicker.swift in Sources */,
 				E878A9501DF1DC6500D0E600 /* CurrencyControler.swift in Sources */,
 				E878A93A1DF180B400D0E600 /* AppDelegate.swift in Sources */,
 				E878A9521DF1E4D800D0E600 /* CurrencyBox.swift in Sources */,
