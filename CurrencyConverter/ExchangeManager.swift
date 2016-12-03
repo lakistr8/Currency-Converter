@@ -9,6 +9,13 @@
 import Foundation
 
 
+enum ExchangeError: Error {
+    
+    case missingRate(String)
+    case invalidResponse
+    case networkError(NSError?)
+}
+
 struct Currency {
     let code: String
     fileprivate(set) var rate: Double?
@@ -28,7 +35,7 @@ final class ExchangeManager {
     }
     
     fileprivate let baseCurrency = "USD"
-    private var rates = [String: Currency]()
+    fileprivate var rates = [String: Currency]()
     
     func populateRates() {
         for cc in Locale.commonISOCurrencyCodes {
@@ -36,16 +43,17 @@ final class ExchangeManager {
         }
     }
     
-    func rate(for targetCC: String, versus sourceCC: String) -> Double? {
+    func rate(for targetCC: String,
+              versus sourceCC: String,
+              completionHandler: (Double?, Error?) -> Void ) {
         let source = rates[sourceCC]
         let target = rates[targetCC]
         
-        guard let sourceRate = source?.rate else { return nil }
-        guard let targetRate = target?.rate else { return nil }
-        
-        return targetRate / sourceRate
+        //		guard let sourceRate = source?.rate else { return nil }
+        //		guard let targetRate = target?.rate else { return nil }
+        //
+        //		return targetRate / sourceRate
     }
-
 }
 
 extension ExchangeManager {
