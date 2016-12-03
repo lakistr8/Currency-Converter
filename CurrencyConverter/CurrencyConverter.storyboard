@@ -476,6 +476,29 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="igl-V7-a4u" id="D4w-HQ-oO4">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-U0-OXJ">
+                                            <rect key="frame" x="8" y="8" width="50" height="28"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="HPg-f2-jSU"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tj-YV-lk3">
+                                            <rect key="frame" x="59" y="0.0" width="316" height="43.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5Tj-YV-lk3" firstAttribute="top" secondItem="D4w-HQ-oO4" secondAttribute="top" id="FEZ-k6-6Yt"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Tj-YV-lk3" secondAttribute="trailing" id="Kge-EG-7NB"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Du0-U0-OXJ" secondAttribute="leading" id="PPu-LI-Kqj"/>
+                                        <constraint firstAttribute="bottom" secondItem="5Tj-YV-lk3" secondAttribute="bottom" id="Qix-AG-OrX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Du0-U0-OXJ" secondAttribute="bottom" id="aZ6-mX-YQi"/>
+                                        <constraint firstItem="5Tj-YV-lk3" firstAttribute="leading" secondItem="Du0-U0-OXJ" secondAttribute="trailing" constant="1" id="dKZ-ue-TcU"/>
+                                        <constraint firstAttribute="topMargin" secondItem="Du0-U0-OXJ" secondAttribute="top" id="dOM-WR-NKB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -487,7 +510,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6s4-Sy-hzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254" y="161"/>
+            <point key="canvasLocation" x="1253.5999999999999" y="160.56971514242881"/>
         </scene>
     </scenes>
     <resources>
