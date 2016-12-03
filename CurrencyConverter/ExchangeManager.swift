@@ -45,20 +45,60 @@ final class ExchangeManager {
     
     func rate(for targetCC: String,
               versus sourceCC: String,
-              completionHandler: (Double?, Error?) -> Void ) {
-        let source = rates[sourceCC]
-        let target = rates[targetCC]
+              completionHandler: @escaping (Double?, ExchangeError?) -> Void ) {
         
-        //		guard let sourceRate = source?.rate else { return nil }
-        //		guard let targetRate = target?.rate else { return nil }
-        //
-        //		return targetRate / sourceRate
+        do {
+            let rate = try convert(from: sourceCC, to: targetCC)
+            completionHandler(rate, nil)
+            return
+        } catch {
+            
+        }
+        
+        fetchCurrencyRate(for: sourceCC, completionHandler: completionHandler)
+    }
+    
+    private let baseURL = "https://download.finance.yahoo.com/d/quotes.csv?f=sb&s="
+    
+    private func singleConversionURL(_ sourceCurrency: String,
+                                     targetCurrency: String  ) -> URL {
+        
+        var s = baseURL;
+    
+        var niz : [String] = []
+        if sourceCurrency != baseCurrency {
+            niz.append(baseCurrency + sourceCurrency + "=X")
+        }
+        if targetCurrency != baseCurrency {
+            niz.append(baseCurrency + targetCurrency + "=X")
+        }
+        
+        s += niz.joined(separator: ",")
+        
+        return URL(string: s)!
     }
 }
 
+
 extension ExchangeManager {
     
-    fileprivate func fetchCurrencyRate(for currency: String) {
+    fileprivate func convert(from sourceCC: String,
+                             to targetCC: String) throws -> Double? {
+        
+        let sourceCurrency = rates[sourceCC]
+        guard let sourceRate = sourceCurrency?.rate else {
+            throw ExchangeError.missingRate(sourceCC)
+        }
+        let targetCurrency = rates[targetCC]
+        guard let targetRate = targetCurrency?.rate else {
+            throw ExchangeError.missingRate(targetCC)
+        }
+        
+        return targetRate / sourceRate
+    }
+    
+    fileprivate func fetchCurrencyRate(for currency: String,
+                                       completionHandler: @escaping (Double?, ExchangeError?) -> Void ) {
         
         //	create URL to call
         let currencies = "\(baseCurrency)\(currency)=X"
@@ -69,6 +109,14 @@ extension ExchangeManager {
             data, urlResponse, error in
             
             //	process the returned stuff, now
+            
+            
+            
+            
+            
+            let rate = 0.0
+            let error: ExchangeError? = nil
+            completionHandler(rate, error)
             
         }
         //	and execute it
