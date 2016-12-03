@@ -348,6 +348,14 @@ extension CurrencyControler: CurrencyBoxDelegate {
 extension CurrencyControler: CurrencyPickerControllerDelegate {
     
     func currencyPicker(controller: CurrencyPicker, didSelect currencyCode: String) {
-        //	ok, now update the currency...ehm, which box?
+        //	ok, now update as needed
+        guard let changeBox = changeCurrencyBox else { return }
+        
+        if changeBox === sourceCurrencyBox {
+            sourceCurrencyCode = currencyCode
+        } else {
+            targetCurrencyCode = currencyCode
+        }
+        changeCurrencyBox = nil
     }
 }
