@@ -26,5 +26,14 @@ final class ExchangeManager {
     private init() {
         
     }
+    
+    private let baseCurrency = "USD"
+    private var rates = [String: Currency]()
+    
+    func populateRates() {
+        for cc in Locale.commonISOCurrencyCodes {
+            rates[cc] = Currency(code: cc)
+        }
+    }
 
 }
