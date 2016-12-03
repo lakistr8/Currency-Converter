@@ -110,6 +110,30 @@ extension ExchangeManager {
             data, urlResponse, error in
             
             //	process the returned stuff, now
+            if let error = error {
+                completionHandler(nil, ExchangeError.networkError(error as NSError?))
+                return
+            }
+            
+            guard let httpURLResponse = urlResponse as? HTTPURLResponse else {
+                completionHandler(nil, ExchangeError.invalidResponse)
+                return
+            }
+            
+            if httpURLResponse.statusCode != 200 {
+                completionHandler(nil, ExchangeError.invalidResponse)
+                return
+            }
+            
+            guard let data = data else {
+                completionHandler(nil, ExchangeError.invalidResponse)
+                return
+            }
+            
+            guard let result = String(data: data, encoding: .utf8) else {
+                completionHandler(nil, ExchangeError.invalidResponse)
+                return
+            }
             
             
             
