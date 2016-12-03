@@ -15,6 +15,18 @@ extension Locale {
         
         for countryCode in NSLocale.commonISOCurrencyCodes {
             
+            switch currencyCode.uppercased() {
+            case "EUR":
+                return "eu"
+            case "USD":
+                return "us"
+            case "GBP":
+                return "gb"
+            case "AUD":
+                return "au"
+            default:
+                break
+            }
             
             let comps = [NSLocale.Key.countryCode.rawValue: countryCode]
             
