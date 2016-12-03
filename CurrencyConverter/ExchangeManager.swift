@@ -24,7 +24,7 @@ final class ExchangeManager {
     
     static let shared = ExchangeManager()
     private init() {
-        
+        populateRates()
     }
     
     private let baseCurrency = "USD"
@@ -34,6 +34,16 @@ final class ExchangeManager {
         for cc in Locale.commonISOCurrencyCodes {
             rates[cc] = Currency(code: cc)
         }
+    }
+    
+    func rate(for targetCC: String, versus sourceCC: String) -> Double? {
+        let source = rates[sourceCC]
+        let target = rates[targetCC]
+        
+        guard let sourceRate = source?.rate else { return nil }
+        guard let targetRate = target?.rate else { return nil }
+        
+        return targetRate / sourceRate
     }
 
 }

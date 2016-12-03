@@ -95,7 +95,10 @@ class CurrencyControler: UIViewController {
             UserDefaults.targetCurrencyCode = targetCurrencyCode
         }
     }
-    var currencyRate : Double?
+    
+    var currencyRate : Double? {
+        return ExchangeManager.shared.rate(for: targetCurrencyCode, versus: sourceCurrencyCode)
+    }
     
     var buttonOriginalBackgroundColor: UIColor?
 }
