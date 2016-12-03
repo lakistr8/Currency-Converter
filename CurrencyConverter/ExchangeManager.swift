@@ -135,6 +135,25 @@ extension ExchangeManager {
                 return
             }
             
+            let lines = result.components(separatedBy: "\n")
+            for line in lines {
+                let lineParts = line.components(separatedBy: ",")
+                guard lineParts.count == 2 else { continue }
+                
+                guard let currencyCode = lineParts.first?.replacingOccurrences(of: self.baseCurrency, with: "").replacingOccurrences(of: "=X", with: "").replacingOccurrences(of: "\"", with: "") else { continue }
+                guard
+                    let str = lineParts.last,
+                    let currencyRate = Double(str)
+                    else { continue }
+                
+                var currency = self.rates[currencyCode]
+                currency?.rate = currencyRate
+                currency?.lastUpdated = Date()
+                // IMPORTANT!!!!!!!!!!! (Do NOT FORGET!)
+                self.rates[currencyCode] = currency
+                
+            }
+            
             
             
             

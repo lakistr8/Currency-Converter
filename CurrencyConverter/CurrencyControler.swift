@@ -96,15 +96,13 @@ class CurrencyControler: UIViewController {
         }
     }
     
+    
     var currencyRate : Double? {
-        var currencyRate : Double? {
             didSet {
                 guard let rate = currencyRate else { return }
                 //	update UI
             }
         }
-    }
-    
     var buttonOriginalBackgroundColor: UIColor?
 }
 
