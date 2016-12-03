@@ -24,13 +24,17 @@ class CurrencyControler: UIViewController {
     
     @IBOutlet weak var decimalButton: UIButton!
     @IBAction func decimalButtonTapped(_ sender: UIButton) {
-        
+        defer {
+            self.didUntouchButton(sender)
+        }
     }
     
     
     @IBOutlet weak var deleteButton: UIButton!
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
-        
+        defer {
+            self.didUntouchButton(sender)
+        }
     }
     
     
@@ -38,13 +42,17 @@ class CurrencyControler: UIViewController {
     
     @IBOutlet var operatorButtons: [UIButton]!
     func operationButtonTapped(_ sender: UIButton) {
-        
+        defer {
+            self.didUntouchButton(sender)
+        }
     }
     
     
     @IBOutlet var digitButtons: [UIButton]!
     func digitButtonTapped(_ sender: UIButton) {
-        
+        defer {
+            self.didUntouchButton(sender)
+        }
     }
     
     var buttonOriginalBackgroundColor: UIColor?
@@ -199,6 +207,9 @@ extension Internal {
 //    }
 //    
 //    func digitButtonTapped(_ sender: UIButton) {
+//    defer {
+//    self.didUntouchButton(sender)
+//    }
 //        guard let numString = sender.title(for: .normal) else { return }
 //        var value = resultField.text ?? ""
 //
@@ -211,6 +222,10 @@ extension Internal {
 //    }
     
 //    func operationButtonTapped(_ sender: UIButton) {
+//    
+//    defer {
+//    self.didUntouchButton(sender)
+//    }
 //        var isEquals = false
 //        
 //        
