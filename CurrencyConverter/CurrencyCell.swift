@@ -12,19 +12,13 @@ class CurrencyCell: UITableViewCell {
     
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var currencyLabel: UILabel!
-
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         currencyLabel.text = nil
         iconView.image = nil
         currencyLabel.textColor = .white
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configure(withCurrencyCode currencyCode: String) {
@@ -34,11 +28,10 @@ class CurrencyCell: UITableViewCell {
         
         //	update flag image, using Locale framework
         guard let countryCode = Locale.countryCode(forCurrencyCode: currencyCode) else {
-            iconView.image = nil
+            iconView.image = #imageLiteral(resourceName: "empty")
             return
         }
         
         iconView.image = UIImage(named: countryCode.lowercased())
     }
-
 }

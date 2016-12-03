@@ -37,6 +37,8 @@ extension FileManager {
     ///	The system will periodically purge these files when your app is not running; therefore, you cannot rely on these files persisting after your app terminates.
     var temporaryURL : URL? {
         return homeURL?.appendingPathComponent("tmp", isDirectory: true)
+        //		let path = try? url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: homeURL, create: true)
+        //		return path
     }
     
     ///	Put data cache files in the `Library/Caches/` directory.

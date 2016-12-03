@@ -14,12 +14,12 @@ class CurrencyControler: UIViewController {
         return .lightContent
     }
     
+    
     let formatter : NumberFormatter = {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
         return nf
     }()
-
     
     
     @IBOutlet weak var decimalButton: UIButton!
@@ -54,26 +54,40 @@ class CurrencyControler: UIViewController {
     }
     
     
+    //	= button
     @IBOutlet weak var equalsButton: UIButton!
-    @IBOutlet var digitButtons: [UIButton]!
+    //	+, -, *, / operatori
     @IBOutlet var operatorButtons: [UIButton]!
     
+    //	numbers
+    @IBOutlet var digitButtons: [UIButton]!
     
     
+    //	CALCULATIONS
+    
+    //	definicija tipa: vrsta aritmetičke operacije
+    //	vrednost `none` znači da nijedan operator nije trenutno aktivan (tapnut)
     enum ArithmeticOperation {
         case none
         case add, subtract, multiply, divide
         case equals
     }
     
-    
     var activeOperation = ArithmeticOperation.none
     
+    //	promenljive za čuvanje unetih brojeva
+    //	izabrao sam da budu decimalni brojevi, uvek
     var firstOperand = 0.0
     var secondOperand = 0.0
     
+    
+    //	CURRENCIES
+    
+    //	ovo treba da bude referenca na currencybox koji je inicirao promenu
+    //	pa onda delegate poziv na osnovu ovoga zna šta da radi
     var changeCurrencyBox : CurrencyBox? = nil
     
+    //	sakrijem = button, a prikažem operator
     @IBOutlet weak var leadingCurrencyBox: CurrencyBox!
     @IBOutlet weak var trailingCurrencyBox: CurrencyBox!
     
@@ -85,6 +99,7 @@ class CurrencyControler: UIViewController {
         return trailingCurrencyBox
     }
     
+    //	data model for the convertor
     var sourceCurrencyCode : String! {
         didSet {
             sourceCurrencyBox.configure(withCurrencyCode: sourceCurrencyCode)
@@ -98,13 +113,16 @@ class CurrencyControler: UIViewController {
         }
     }
     
-    
     var currencyRate : Double? {
-            didSet {
-                guard let rate = currencyRate else { return }
-                //	update UI
-            }
+        didSet {
+            guard let rate = currencyRate else { return }
+            //	update UI
+            self.updateConversionPanel()
         }
+    }
+    
+    //	TOUCHES
+    
     var buttonOriginalBackgroundColor: UIColor?
 }
 
@@ -117,13 +135,14 @@ extension UISetup {
         for btn in digitButtons {
             btn.addTarget(self, action: #selector(CurrencyControler.digitButtonTapped(_:)), for: .touchUpInside)
         }
-        for btn in operatorButtons {
+        let operators = operatorButtons + [equalsButton]
+        for btn in operators {
             btn.addTarget(self, action: #selector(CurrencyControler.operationButtonTapped(_:)), for: .touchUpInside)
         }
     }
     
     func assignButtonTargets() {
-        let allButtons = digitButtons + operatorButtons + [decimalButton, deleteButton]
+        let allButtons = digitButtons + operatorButtons + [decimalButton, deleteButton, equalsButton]
         for btn in allButtons {
             btn.addTarget(self, action: #selector(CurrencyControler.didTouchButton(_:)), for: .touchDown)
             
@@ -178,6 +197,7 @@ extension UISetup {
     }
     
     func cleanupUI() {
+        //	sakrijem = button, a prikažem operator
         self.equalsButton.alpha = 0
         self.operatorButtons.forEach { (btn) in
             btn.alpha = 1
@@ -191,7 +211,6 @@ extension UISetup {
         sourceCurrencyBox.delegate = self
         targetCurrencyBox.delegate = self
     }
-    
 }
 
 
@@ -212,6 +231,13 @@ extension ViewLifecycle {
         setupInitialCurrencies()
         setupCurrencyBoxes()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateConversionRate()
+    }
+
 }
 
 typealias Internal = CurrencyControler
@@ -225,6 +251,7 @@ extension Internal {
         let result = amount * rate
         targetCurrencyBox.amountText = formatter.string(for: result)
     }
+    
     
     func updateConversionRate() {
         
@@ -248,7 +275,9 @@ extension Internal {
                 
                 self.currencyRate = returnedRate
             }
+            
         }
+        
     }
     
     func validateOperandInput() -> Double? {
@@ -290,7 +319,7 @@ extension Internal {
             activeOperation = .add
         case "-":
             activeOperation = .subtract
-        case "X":
+        case "×":
             activeOperation = .multiply
         case "÷":
             activeOperation = .divide
@@ -330,12 +359,14 @@ extension Internal {
             firstOperand = 0
             secondOperand = 0
             
+            //	reveal the operator buttons again and hide EQUALS button
             UIView.animate(withDuration: 0.4, animations: {
                 self.equalsButton.alpha = 0
                 self.operatorButtons.forEach { (btn) in
                     btn.alpha = 1
                 }
             })
+            
             
         } else if activeOperation != .none {
             
@@ -349,6 +380,7 @@ extension Internal {
             //	obriši prikaz i time se spremi za unos drugog operanda
             sourceCurrencyBox.amountText = nil
             
+            //	hide all the oprator buttons and reveal EQUALS button
             UIView.animate(withDuration: 0.25, animations: {
                 self.equalsButton.alpha = 1
                 self.operatorButtons.forEach { (btn) in
@@ -366,27 +398,24 @@ extension CurrencyControler : UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return false
     }
-
+    
 }
 
 extension CurrencyControler: CurrencyBoxDelegate {
     
     func currencyBoxInitiatedChange(_ currencyBox: CurrencyBox) {
-        func currencyPicker(controller: CurrencyPicker, didSelect currencyCode: String) {
-            func currencyBoxInitiatedChange(_ currencyBox: CurrencyBox) {
-                //	save who requested the change
-                changeCurrencyBox = currencyBox
-                
-                //	load and display the controller, without storyboard
-                let storyboard = UIStoryboard(name: "Convert", bundle: nil)
-                guard let vc = storyboard.instantiateViewController(withIdentifier: "CurrencyPicker") as? CurrencyPicker else {
-                    fatalError("Failed to create instance of CurrencyPickerController from \(storyboard)")
-                }
-                vc.delegate = self
-                show(vc, sender: self)
-            }
+        //	save who requested the change
+        changeCurrencyBox = currencyBox
+        
+        //	load and display the controller, without storyboard
+        let storyboard = UIStoryboard(name: "CurrencyConverter", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "CurrencyPicker") as? CurrencyPicker else {
+            fatalError("Failed to create instance of CurrencyPickerController from \(storyboard)")
         }
+        vc.delegate = self
+        show(vc, sender: self)
     }
+
 }
 
 extension CurrencyControler: CurrencyPickerControllerDelegate {
@@ -401,6 +430,7 @@ extension CurrencyControler: CurrencyPickerControllerDelegate {
             targetCurrencyCode = currencyCode
         }
         changeCurrencyBox = nil
+        
         _ = navigationController?.popViewController(animated: true)
     }
 }

@@ -50,6 +50,7 @@ enum ExchangeError: Error {
     }
 }
 
+
 struct Currency {
     let code: String
     fileprivate(set) var rate: Double?
@@ -91,10 +92,13 @@ extension Currency {
     }
 }
 
+
 final class ExchangeManager {
+    
     
     static let shared = ExchangeManager()
     private init() {
+        restoreRates()
         populateRates()
     }
     
@@ -127,13 +131,16 @@ final class ExchangeManager {
                           completionHandler: completionHandler)
     }
     
+    
     private let baseURL = "https://download.finance.yahoo.com/d/quotes.csv?f=sb&s="
     
+    //	method koji formira kompletan URL koji se šalje Yahoo-u
     fileprivate func singleConversionURL(_ sourceCurrency: String,
-                                     targetCurrency: String  ) -> URL {
-        
+                                         targetCurrency: String  ) -> URL {
+        //	počneš od base URL-a
         var s = baseURL;
-    
+        
+        //	skupiš sve parove valuta u niz
         var niz : [String] = []
         if sourceCurrency != baseCurrency {
             niz.append(baseCurrency + sourceCurrency + "=X")
@@ -142,10 +149,17 @@ final class ExchangeManager {
             niz.append(baseCurrency + targetCurrency + "=X")
         }
         
+        //	HW: nedostaje provera - šta ako je niz prazan?
+        //		trebalo bi rezultat methoda da bude opcioni NSURL
+        
+        //	spojimo sve parove valuta u jedan string, razdvojen sa ","
         s += niz.joined(separator: ",")
         
         return URL(string: s)!
     }
+    
+    
+    
     
     private let storageURL = FileManager.default.applicationSupportURL
     
@@ -158,7 +172,9 @@ final class ExchangeManager {
         //	restore from the file, and save into self.rates dictionary
         
     }
+    
 }
+
 
 
 extension ExchangeManager {
@@ -177,6 +193,10 @@ extension ExchangeManager {
         
         return targetRate / sourceRate
     }
+    
+    
+    
+    
     
     fileprivate func fetchCurrencyRate(from sourceCC: String,
                                        to targetCC: String,
@@ -214,6 +234,11 @@ extension ExchangeManager {
                 return
             }
             
+            guard result.characters.count > 0 else {
+                completionHandler(nil, ExchangeError.invalidResponse)
+                return
+            }
+            
             let lines = result.components(separatedBy: "\n")
             for line in lines {
                 let lineParts = line.components(separatedBy: ",")
@@ -246,4 +271,5 @@ extension ExchangeManager {
         task.resume()
         
     }
+    
 }

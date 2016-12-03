@@ -484,13 +484,13 @@
         <!--Currency Picker-->
         <scene sceneID="X1e-aH-hA0">
             <objects>
-                <tableViewController id="f5A-HQ-aub" customClass="CurrencyPicker" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CurrencyPicker" id="f5A-HQ-aub" customClass="CurrencyPicker" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JOL-gG-bu3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="igl-V7-a4u" customClass="CurrencyCell" customModule="CurrencyConverter" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" id="igl-V7-a4u" customClass="CurrencyCell" customModule="CurrencyConverter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="igl-V7-a4u" id="D4w-HQ-oO4">
@@ -498,18 +498,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-U0-OXJ">
-                                            <rect key="frame" x="8" y="8" width="50" height="28"/>
+                                            <rect key="frame" x="8" y="8" width="30" height="28"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="HPg-f2-jSU"/>
+                                                <constraint firstAttribute="width" constant="30" id="HPg-f2-jSU"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tj-YV-lk3">
-                                            <rect key="frame" x="59" y="0.0" width="316" height="43.5"/>
+                                            <rect key="frame" x="39" y="0.0" width="336" height="43.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="5Tj-YV-lk3" firstAttribute="top" secondItem="D4w-HQ-oO4" secondAttribute="top" id="FEZ-k6-6Yt"/>
                                         <constraint firstAttribute="trailing" secondItem="5Tj-YV-lk3" secondAttribute="trailing" id="Kge-EG-7NB"/>

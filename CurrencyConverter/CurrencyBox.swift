@@ -21,6 +21,7 @@ class CurrencyBox: UIView {
     
     weak var delegate: CurrencyBoxDelegate?
     
+    //	using computed property for both get/set
     var amountText: String? {
         get {
             return textField.text
@@ -31,8 +32,11 @@ class CurrencyBox: UIView {
     }
     
     func configure(withCurrencyCode currencyCode: String) {
+        
+        //	update label
         currencyCodeLabel.text = currencyCode
-
+        
+        //	update flag image, using Locale framework
         guard let countryCode = Locale.countryCode(forCurrencyCode: currencyCode) else {
             flagImageView.image = nil
             return
@@ -44,5 +48,4 @@ class CurrencyBox: UIView {
     @IBAction func didTapButton(_ sender: UIButton) {
         delegate?.currencyBoxInitiatedChange(self)
     }
-    
 }

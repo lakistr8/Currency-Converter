@@ -15,6 +15,7 @@ protocol CurrencyPickerControllerDelegate: class {
 
 class CurrencyPicker: UITableViewController {
     
+    
     weak var delegate: CurrencyPickerControllerDelegate? = nil
     
     var searchString : String?
@@ -34,15 +35,15 @@ class CurrencyPicker: UITableViewController {
     deinit {
         searchController?.view.removeFromSuperview()
     }
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background") )
+        //		tableView.backgroundView = UIImageView(image: UIImage(named: "globalbg") )
+        //	ili može i ovako u Xcodeu 8
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "background"))
         
         setupSearch()
-        
     }
 }
 
