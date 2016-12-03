@@ -231,16 +231,24 @@ extension Internal {
         ExchangeManager.shared.rate(for: sourceCurrencyCode, versus: targetCurrencyCode) {
             (returnedRate, error) in
             
-            if let err = error {
-                //				switch err {
-                //				case .missingRate(let cc):
-                //				}
-                return
+            DispatchQueue.main.async {
+                if let err = error {
+                    //	error display
+                    let ac = UIAlertController(title: err.title,
+                                               message: err.message,
+                                               preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "OK",
+                                           style: .default, handler: nil)
+                    ac.addAction(ok)
+                    
+                    self.present(ac, animated: true, completion: nil)
+                    
+                    return
+                }
+                
+                self.currencyRate = returnedRate
             }
-            
-            self.currencyRate = returnedRate
         }
-        
     }
     
     func validateOperandInput() -> Double? {

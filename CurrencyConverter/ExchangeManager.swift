@@ -14,6 +14,40 @@ enum ExchangeError: Error {
     case missingRate(String)
     case invalidResponse
     case networkError(NSError?)
+    
+    var title: String {
+        var str = ""
+        switch self {
+        case .missingRate:
+            str = "Unknown rate"
+        case .invalidResponse:
+            str = "Invalid response"
+        case .networkError(let netError):
+            if let s = netError?.localizedDescription {
+                str = s
+            } else {
+                str = "Network error"
+            }
+        }
+        return str
+    }
+    
+    var message: String {
+        var str = ""
+        switch self {
+        case .missingRate(let cc):
+            str = "Could not fetch rate for currency \(cc)"
+        case .invalidResponse:
+            str = "Our currency rate service returned unexpected response. Please try again later"
+        case .networkError(let netError):
+            if let s = netError?.localizedFailureReason {
+                str = s
+            } else {
+                str = "Please try again later"
+            }
+        }
+        return str
+    }
 }
 
 struct Currency {
