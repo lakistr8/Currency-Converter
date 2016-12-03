@@ -56,7 +56,7 @@ class CurrencyControler: UIViewController {
     @IBOutlet var digitButtons: [UIButton]!
     @IBOutlet var operatorButtons: [UIButton]!
     
-    var buttonOriginalBackgroundColor: UIColor?
+    
     
     enum ArithmeticOperation {
         case none
@@ -96,6 +96,8 @@ class CurrencyControler: UIViewController {
         }
     }
     var currencyRate : Double?
+    
+    var buttonOriginalBackgroundColor: UIColor?
 }
 
 
@@ -327,7 +329,25 @@ extension CurrencyControler: CurrencyBoxDelegate {
     
     func currencyBoxInitiatedChange(_ currencyBox: CurrencyBox) {
         func currencyPicker(controller: CurrencyPicker, didSelect currencyCode: String) {
-            //	ok, now update the currency...ehm, which box?
+            func currencyBoxInitiatedChange(_ currencyBox: CurrencyBox) {
+                //	save who requested the change
+                changeCurrencyBox = currencyBox
+                
+                //	load and display the controller, without storyboard
+                let storyboard = UIStoryboard(name: "Convert", bundle: nil)
+                guard let vc = storyboard.instantiateViewController(withIdentifier: "CurrencyPicker") as? CurrencyPicker else {
+                    fatalError("Failed to create instance of CurrencyPickerController from \(storyboard)")
+                }
+                vc.delegate = self
+                show(vc, sender: self)
+            }
         }
+    }
+}
+
+extension CurrencyControler: CurrencyPickerControllerDelegate {
+    
+    func currencyPicker(controller: CurrencyPicker, didSelect currencyCode: String) {
+        //	ok, now update the currency...ehm, which box?
     }
 }
