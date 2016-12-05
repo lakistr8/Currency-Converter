@@ -504,7 +504,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tj-YV-lk3">
-                                            <rect key="frame" x="39" y="0.0" width="336" height="43.5"/>
+                                            <rect key="frame" x="58" y="0.0" width="317" height="43.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -518,10 +518,12 @@
                                         <constraint firstAttribute="leadingMargin" secondItem="Du0-U0-OXJ" secondAttribute="leading" id="PPu-LI-Kqj"/>
                                         <constraint firstAttribute="bottom" secondItem="5Tj-YV-lk3" secondAttribute="bottom" id="Qix-AG-OrX"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Du0-U0-OXJ" secondAttribute="bottom" id="aZ6-mX-YQi"/>
-                                        <constraint firstItem="5Tj-YV-lk3" firstAttribute="leading" secondItem="Du0-U0-OXJ" secondAttribute="trailing" constant="1" id="dKZ-ue-TcU"/>
+                                        <constraint firstItem="5Tj-YV-lk3" firstAttribute="leading" secondItem="Du0-U0-OXJ" secondAttribute="trailing" constant="20" id="dKZ-ue-TcU"/>
                                         <constraint firstAttribute="topMargin" secondItem="Du0-U0-OXJ" secondAttribute="top" id="dOM-WR-NKB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="currencyLabel" destination="5Tj-YV-lk3" id="cXG-OL-zXE"/>
                                     <outlet property="iconView" destination="Du0-U0-OXJ" id="MUW-4L-lHJ"/>
