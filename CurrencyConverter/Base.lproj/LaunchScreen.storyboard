@@ -25,13 +25,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="BJm-7L-gF8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ⓒ 2016 Copyright lakistr8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVq-vQ-9aF">
+                                <rect key="frame" x="0.0" y="597" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="x3j-ky-Ozi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="BJm-7L-gF8" secondAttribute="bottom" id="7kW-eC-KfF"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="bVq-vQ-9aF" secondAttribute="bottom" constant="20" id="I48-QQ-7P8"/>
                             <constraint firstAttribute="trailing" secondItem="BJm-7L-gF8" secondAttribute="trailing" id="RZa-bP-4xl"/>
                             <constraint firstItem="BJm-7L-gF8" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="TQ2-Mh-rj6"/>
                             <constraint firstItem="BJm-7L-gF8" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="sNL-8Q-5A1"/>
+                            <constraint firstAttribute="trailing" secondItem="bVq-vQ-9aF" secondAttribute="trailing" id="w9u-iO-9qU"/>
+                            <constraint firstItem="bVq-vQ-9aF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="zdU-pu-qSR"/>
                         </constraints>
                     </view>
                 </viewController>
