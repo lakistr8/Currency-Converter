@@ -120,6 +120,7 @@
 				TargetAttributes = {
 					E878A9351DF180B300D0E600 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = QC44D63L54;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -284,7 +285,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QC44D63L54;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.iosakademija.CurrencyConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -296,7 +299,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QC44D63L54;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.iosakademija.CurrencyConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
