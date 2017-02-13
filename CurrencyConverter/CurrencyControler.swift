@@ -319,7 +319,7 @@ extension Internal {
             activeOperation = .add
         case "-":
             activeOperation = .subtract
-        case "×":
+        case "X":
             activeOperation = .multiply
         case "÷":
             activeOperation = .divide
