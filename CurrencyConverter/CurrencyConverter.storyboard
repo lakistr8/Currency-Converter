@@ -245,7 +245,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pod-Hn-esm" userLabel="panel">
-                                <rect key="frame" x="0.0" y="92" width="375" height="128"/>
+                                <rect key="frame" x="0.0" y="48" width="375" height="128"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37i-7D-5q5" userLabel="curLeft" customClass="CurrencyBox" customModule="CurrencyConverter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="128"/>
@@ -390,26 +390,22 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tht-tk-RNI" userLabel="infoblock">
-                                <rect key="frame" x="0.0" y="228" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="250" width="375" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0e-Bs-eW4">
-                                        <rect key="frame" x="345" y="11" width="22" height="21"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated on Nov 1st, 14:28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBt-pP-EXQ">
-                                        <rect key="frame" x="8" y="14" width="329" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENCY CONVERTER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBt-pP-EXQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="C0e-Bs-eW4" firstAttribute="leading" secondItem="SBt-pP-EXQ" secondAttribute="trailing" constant="8" id="3vD-h8-vMO"/>
-                                    <constraint firstItem="SBt-pP-EXQ" firstAttribute="centerY" secondItem="C0e-Bs-eW4" secondAttribute="centerY" id="9mo-7Z-23i"/>
-                                    <constraint firstAttribute="bottom" secondItem="C0e-Bs-eW4" secondAttribute="bottom" constant="12" id="MoY-5l-4LM"/>
-                                    <constraint firstItem="SBt-pP-EXQ" firstAttribute="leading" secondItem="tht-tk-RNI" secondAttribute="leading" constant="8" id="OL6-Zc-0zt"/>
-                                    <constraint firstAttribute="trailing" secondItem="C0e-Bs-eW4" secondAttribute="trailing" constant="8" id="WKz-7T-E0J"/>
-                                    <constraint firstItem="C0e-Bs-eW4" firstAttribute="top" secondItem="tht-tk-RNI" secondAttribute="top" constant="11" id="u6u-Od-1Mh"/>
+                                    <constraint firstAttribute="height" constant="40" id="HrB-kW-Tyl"/>
+                                    <constraint firstItem="SBt-pP-EXQ" firstAttribute="leading" secondItem="tht-tk-RNI" secondAttribute="leading" id="OL6-Zc-0zt"/>
+                                    <constraint firstAttribute="bottom" secondItem="SBt-pP-EXQ" secondAttribute="bottom" id="XhL-ic-LTi"/>
+                                    <constraint firstAttribute="trailing" secondItem="SBt-pP-EXQ" secondAttribute="trailing" id="bx0-Db-8WS"/>
+                                    <constraint firstItem="SBt-pP-EXQ" firstAttribute="top" secondItem="tht-tk-RNI" secondAttribute="top" id="cvs-bM-OhY"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -419,13 +415,11 @@
                             <constraint firstAttribute="trailing" secondItem="tht-tk-RNI" secondAttribute="trailing" id="Kfg-9q-CjD"/>
                             <constraint firstAttribute="trailing" secondItem="3Rf-fg-5kG" secondAttribute="trailing" id="LiH-8T-LEH"/>
                             <constraint firstItem="3Rf-fg-5kG" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="Mk8-fu-ndg"/>
-                            <constraint firstItem="tht-tk-RNI" firstAttribute="top" secondItem="pod-Hn-esm" secondAttribute="bottom" constant="8" id="P5x-cy-GTM"/>
                             <constraint firstAttribute="bottomMargin" secondItem="cgg-jm-145" secondAttribute="bottom" id="R5n-Am-pF7"/>
-                            <constraint firstItem="3Rf-fg-5kG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tht-tk-RNI" secondAttribute="bottom" constant="20" id="RFu-97-mRz"/>
+                            <constraint firstItem="3Rf-fg-5kG" firstAttribute="top" secondItem="tht-tk-RNI" secondAttribute="bottom" constant="2" id="RFu-97-mRz"/>
                             <constraint firstItem="tht-tk-RNI" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="c4c-kC-MC2"/>
                             <constraint firstItem="cgg-jm-145" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="hjA-ja-3bi"/>
                             <constraint firstAttribute="trailing" secondItem="pod-Hn-esm" secondAttribute="trailing" id="im6-ej-bWW"/>
-                            <constraint firstItem="pod-Hn-esm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cBv-4k-oX2" secondAttribute="bottom" id="lHx-7S-wzw"/>
                             <constraint firstItem="cgg-jm-145" firstAttribute="top" secondItem="oDg-uL-cPs" secondAttribute="topMargin" id="mqo-ZI-GPO"/>
                             <constraint firstItem="pod-Hn-esm" firstAttribute="top" secondItem="cBv-4k-oX2" secondAttribute="bottom" constant="28" id="p5B-rU-ipr"/>
                             <constraint firstItem="pod-Hn-esm" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="rF2-ET-CK5"/>
