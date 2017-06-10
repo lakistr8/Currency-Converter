@@ -51,6 +51,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C5DD3031EEC7D810058C3A9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E878A94F1DF1DC6500D0E600 /* CurrencyControler.swift */,
+				E878A9511DF1E4D800D0E600 /* CurrencyBox.swift */,
+				E881A5771DF2D5F30050AAE6 /* CurrencyPicker.swift */,
+				E881A5791DF2D63F0050AAE6 /* CurrencyCell.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8C5DD3041EEC7DB80058C3A9 /* API call, Errors */ = {
+			isa = PBXGroup;
+			children = (
+				E854F58D1DF2E2AD008E2564 /* ExchangeManager.swift */,
+				E854F58F1DF2EA07008E2564 /* FileManager-Extension.swift */,
+			);
+			name = "API call, Errors";
+			sourceTree = "<group>";
+		};
+		8C5DD3051EEC7E090058C3A9 /* User Defaults, Locale Indefier */ = {
+			isa = PBXGroup;
+			children = (
+				E881A5731DF2C4890050AAE6 /* Locale-Extension.swift */,
+				E881A5751DF2D11A0050AAE6 /* UserDefaults-Extension.swift */,
+			);
+			name = "User Defaults, Locale Indefier";
+			sourceTree = "<group>";
+		};
 		E878A92D1DF180B300D0E600 = {
 			isa = PBXGroup;
 			children = (
@@ -75,14 +104,9 @@
 				E878A94D1DF19D1700D0E600 /* FlagImages.xcassets */,
 				E878A9421DF180B400D0E600 /* LaunchScreen.storyboard */,
 				E878A94B1DF1819500D0E600 /* CurrencyConverter.storyboard */,
-				E878A94F1DF1DC6500D0E600 /* CurrencyControler.swift */,
-				E878A9511DF1E4D800D0E600 /* CurrencyBox.swift */,
-				E881A5731DF2C4890050AAE6 /* Locale-Extension.swift */,
-				E881A5751DF2D11A0050AAE6 /* UserDefaults-Extension.swift */,
-				E881A5771DF2D5F30050AAE6 /* CurrencyPicker.swift */,
-				E881A5791DF2D63F0050AAE6 /* CurrencyCell.swift */,
-				E854F58D1DF2E2AD008E2564 /* ExchangeManager.swift */,
-				E854F58F1DF2EA07008E2564 /* FileManager-Extension.swift */,
+				8C5DD3031EEC7D810058C3A9 /* Controllers */,
+				8C5DD3051EEC7E090058C3A9 /* User Defaults, Locale Indefier */,
+				8C5DD3041EEC7DB80058C3A9 /* API call, Errors */,
 				E878A9451DF180B400D0E600 /* Info.plist */,
 			);
 			path = CurrencyConverter;
