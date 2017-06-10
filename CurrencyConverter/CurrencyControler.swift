@@ -24,7 +24,14 @@ class CurrencyControler: UIViewController {
     // views for changed border in cur left/right
     @IBOutlet weak var curLeft : UIView!
     @IBOutlet weak var curRight : UIView!
-    
+    func makeCurCircle() {
+        //changed border for curLeft view
+        self.curLeft.layer.masksToBounds = true
+        self.curLeft.layer.cornerRadius  = CGFloat(roundf(Float(self.curLeft.frame.size.width/20)))
+        //changed border for curRight view
+        self.curRight.layer.masksToBounds = true
+        self.curRight.layer.cornerRadius  = CGFloat(roundf(Float(self.curRight.frame.size.width/20)))
+    }
     
     //circle view for btn
     @IBOutlet weak var circleViewBtn : UIView!
@@ -243,6 +250,7 @@ extension ViewLifecycle {
         setupInitialCurrencies()
         setupCurrencyBoxes()
         makeItCircle()
+        makeCurCircle()
     }
     
     override func viewWillAppear(_ animated: Bool) {
