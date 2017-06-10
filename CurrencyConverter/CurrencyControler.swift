@@ -401,6 +401,10 @@ extension CurrencyControler : UITextFieldDelegate {
     
 }
 
+extension CurrencyControler {
+    
+}
+
 extension CurrencyControler: CurrencyBoxDelegate {
     
     func currencyBoxInitiatedChange(_ currencyBox: CurrencyBox) {
