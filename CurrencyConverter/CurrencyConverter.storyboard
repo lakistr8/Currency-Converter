@@ -378,7 +378,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="2KD-SA-YPu"/>
                                     <constraint firstItem="enG-tG-bcx" firstAttribute="width" secondItem="37i-7D-5q5" secondAttribute="width" id="8oz-8p-Ngr"/>
                                     <constraint firstAttribute="bottom" secondItem="enG-tG-bcx" secondAttribute="bottom" id="O4S-Kz-VEk"/>
                                     <constraint firstAttribute="bottom" secondItem="37i-7D-5q5" secondAttribute="bottom" id="WEd-uC-uve"/>
@@ -412,6 +411,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cgg-jm-145" secondAttribute="trailing" id="1r0-bd-ZdX"/>
+                            <constraint firstItem="tht-tk-RNI" firstAttribute="top" secondItem="pod-Hn-esm" secondAttribute="bottom" constant="74" id="6pM-92-99M"/>
                             <constraint firstAttribute="trailing" secondItem="tht-tk-RNI" secondAttribute="trailing" id="Kfg-9q-CjD"/>
                             <constraint firstAttribute="trailing" secondItem="3Rf-fg-5kG" secondAttribute="trailing" id="LiH-8T-LEH"/>
                             <constraint firstItem="3Rf-fg-5kG" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="Mk8-fu-ndg"/>
