@@ -412,7 +412,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCT-hB-u2o">
                                         <rect key="frame" x="163" y="50" width="49" height="50"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m1e-JI-r24">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ikonen" translatesAutoresizingMaskIntoConstraints="NO" id="m1e-JI-r24">
                                                 <rect key="frame" x="1" y="1" width="47" height="48"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHO-2R-g3g">
@@ -486,7 +486,9 @@
                             <constraint firstItem="GDX-tI-ygV" firstAttribute="top" secondItem="3Rf-fg-5kG" secondAttribute="bottom" id="wt0-Ww-W5G"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JOQ-Ho-u0F"/>
+                    <navigationItem key="navigationItem" id="JOQ-Ho-u0F">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Cgz-vt-4b4"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="circleViewBtn" destination="iCT-hB-u2o" id="RNO-dx-QQa"/>
                         <outlet property="curLeft" destination="PB9-Al-j5I" id="0UH-b1-81A"/>
@@ -580,6 +582,7 @@
     <resources>
         <image name="background" width="130" height="222"/>
         <image name="eu" width="16" height="16"/>
+        <image name="ikonen" width="1024" height="1024"/>
         <image name="rs" width="16" height="16"/>
     </resources>
 </document>
