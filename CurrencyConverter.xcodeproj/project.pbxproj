@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C5DD3091EEC83B70058C3A9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C5DD3081EEC83B70058C3A9 /* Images.xcassets */; };
 		E854F58E1DF2E2AD008E2564 /* ExchangeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854F58D1DF2E2AD008E2564 /* ExchangeManager.swift */; };
 		E854F5901DF2EA07008E2564 /* FileManager-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854F58F1DF2EA07008E2564 /* FileManager-Extension.swift */; };
 		E878A93A1DF180B400D0E600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E878A9391DF180B400D0E600 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C5DD3081EEC83B70058C3A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E854F58D1DF2E2AD008E2564 /* ExchangeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeManager.swift; sourceTree = "<group>"; };
 		E854F58F1DF2EA07008E2564 /* FileManager-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager-Extension.swift"; sourceTree = "<group>"; };
 		E878A9361DF180B400D0E600 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				8C5DD3051EEC7E090058C3A9 /* User Defaults, Locale Indefier */,
 				8C5DD3041EEC7DB80058C3A9 /* API call, Errors */,
 				E878A9451DF180B400D0E600 /* Info.plist */,
+				8C5DD3081EEC83B70058C3A9 /* Images.xcassets */,
 			);
 			path = CurrencyConverter;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E878A9441DF180B400D0E600 /* LaunchScreen.storyboard in Resources */,
+				8C5DD3091EEC83B70058C3A9 /* Images.xcassets in Resources */,
 				E878A9411DF180B400D0E600 /* Assets.xcassets in Resources */,
 				E878A94C1DF1819500D0E600 /* CurrencyConverter.storyboard in Resources */,
 				E878A94E1DF19D1700D0E600 /* FlagImages.xcassets in Resources */,
@@ -311,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = QC44D63L54;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -325,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = QC44D63L54;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
