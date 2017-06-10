@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "CurrencyConverter", bundle: nil)
-        guard let nc = storyboard.instantiateInitialViewController() as? UINavigationController else {
+        guard let nc = storyboard.instantiateInitialViewController() as? UIViewController else {
             fatalError("Not create instance of \(storyboard)")
         }
         
