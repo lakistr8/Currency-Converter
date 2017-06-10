@@ -40,6 +40,15 @@ class CurrencyControler: UIViewController {
         self.circleViewBtn.layer.cornerRadius  = CGFloat(roundf(Float(self.circleViewBtn.frame.size.width/2)))
     }
     
+    // Outlet and func for rotate view and button
+    @IBOutlet weak var rotateBtn: UIButton!
+    @IBOutlet weak var rotationView : UIImageView!
+    @IBAction func rotateCurrencyBoxes(_sender:UIButton) {
+        UIView.animate(withDuration: 2.0, animations: { () -> Void in
+            self.rotationView.transform = CGAffineTransform(rotationAngle: 360.0 * CGFloat(M_PI) / 360.0)
+        })
+    }
+    
     
     @IBOutlet weak var decimalButton: UIButton!
     @IBAction func decimalButtonTapped(_ sender: UIButton) {

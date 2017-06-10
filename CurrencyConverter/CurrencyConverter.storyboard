@@ -417,6 +417,9 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHO-2R-g3g">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="50"/>
+                                                <connections>
+                                                    <action selector="rotateCurrencyBoxesWith_sender:" destination="RRu-WX-bwX" eventType="touchUpInside" id="dWO-Ys-Vwh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -486,9 +489,7 @@
                             <constraint firstItem="GDX-tI-ygV" firstAttribute="top" secondItem="3Rf-fg-5kG" secondAttribute="bottom" id="wt0-Ww-W5G"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JOQ-Ho-u0F">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Cgz-vt-4b4"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="JOQ-Ho-u0F"/>
                     <connections>
                         <outlet property="circleViewBtn" destination="iCT-hB-u2o" id="RNO-dx-QQa"/>
                         <outlet property="curLeft" destination="PB9-Al-j5I" id="0UH-b1-81A"/>
@@ -497,6 +498,8 @@
                         <outlet property="deleteButton" destination="HTX-FT-6zE" id="3bC-tE-APl"/>
                         <outlet property="equalsButton" destination="YZB-06-kmj" id="bER-1G-3rm"/>
                         <outlet property="leadingCurrencyBox" destination="37i-7D-5q5" id="wWX-B0-URd"/>
+                        <outlet property="rotateBtn" destination="bHO-2R-g3g" id="EiM-Ej-Nj9"/>
+                        <outlet property="rotationView" destination="m1e-JI-r24" id="9AB-tJ-Tyl"/>
                         <outlet property="trailingCurrencyBox" destination="enG-tG-bcx" id="pEB-IA-98J"/>
                         <outletCollection property="digitButtons" destination="oBi-VO-wEs" collectionClass="NSMutableArray" id="ORb-lz-ydF"/>
                         <outletCollection property="digitButtons" destination="C2f-Db-BQf" collectionClass="NSMutableArray" id="2mr-HO-Wt4"/>
