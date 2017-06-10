@@ -290,12 +290,20 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PB9-Al-j5I">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="150"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.22193386130136986" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="TNO-tn-rWc" secondAttribute="trailing" id="4U5-x0-zsR"/>
+                                            <constraint firstAttribute="bottom" secondItem="PB9-Al-j5I" secondAttribute="bottom" id="BfJ-fW-rgG"/>
+                                            <constraint firstAttribute="trailing" secondItem="PB9-Al-j5I" secondAttribute="trailing" id="DlC-2q-hx3"/>
                                             <constraint firstAttribute="trailing" secondItem="kWT-Z4-foP" secondAttribute="trailing" id="JvM-br-oin"/>
                                             <constraint firstItem="TNO-tn-rWc" firstAttribute="top" secondItem="37i-7D-5q5" secondAttribute="top" id="KAp-0W-Q0t"/>
+                                            <constraint firstItem="PB9-Al-j5I" firstAttribute="top" secondItem="37i-7D-5q5" secondAttribute="top" id="LfF-Ph-Qzq"/>
+                                            <constraint firstItem="PB9-Al-j5I" firstAttribute="leading" secondItem="37i-7D-5q5" secondAttribute="leading" id="XEn-H7-cg5"/>
                                             <constraint firstAttribute="bottom" secondItem="kWT-Z4-foP" secondAttribute="bottom" id="Z3U-us-JMy"/>
                                             <constraint firstItem="kWT-Z4-foP" firstAttribute="height" secondItem="TNO-tn-rWc" secondAttribute="height" id="bsc-LA-Xck"/>
                                             <constraint firstItem="kWT-Z4-foP" firstAttribute="leading" secondItem="37i-7D-5q5" secondAttribute="leading" id="lff-To-TjT"/>
@@ -354,15 +362,23 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dow-hy-96I">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="150"/>
+                                                <color key="backgroundColor" white="1" alpha="0.20863655821917809" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="B92-4g-f8F" firstAttribute="top" secondItem="ELd-sX-3fw" secondAttribute="bottom" constant="1" id="19Y-V3-60P"/>
                                             <constraint firstItem="ELd-sX-3fw" firstAttribute="top" secondItem="enG-tG-bcx" secondAttribute="top" id="6Wt-wl-UAu"/>
+                                            <constraint firstAttribute="bottom" secondItem="dow-hy-96I" secondAttribute="bottom" id="AK6-ad-2Xf"/>
                                             <constraint firstAttribute="trailing" secondItem="ELd-sX-3fw" secondAttribute="trailing" id="GLc-NN-eHj"/>
                                             <constraint firstAttribute="trailing" secondItem="B92-4g-f8F" secondAttribute="trailing" id="Mff-vy-XPz"/>
                                             <constraint firstItem="B92-4g-f8F" firstAttribute="height" secondItem="ELd-sX-3fw" secondAttribute="height" id="N79-dJ-SxZ"/>
                                             <constraint firstAttribute="bottom" secondItem="B92-4g-f8F" secondAttribute="bottom" id="OHZ-yF-AJS"/>
+                                            <constraint firstItem="dow-hy-96I" firstAttribute="top" secondItem="enG-tG-bcx" secondAttribute="top" id="QbB-eP-7t8"/>
+                                            <constraint firstItem="dow-hy-96I" firstAttribute="leading" secondItem="enG-tG-bcx" secondAttribute="leading" id="Zui-n1-gOV"/>
+                                            <constraint firstAttribute="trailing" secondItem="dow-hy-96I" secondAttribute="trailing" id="aeV-aG-yhm"/>
                                             <constraint firstItem="ELd-sX-3fw" firstAttribute="leading" secondItem="enG-tG-bcx" secondAttribute="leading" id="p0Y-0p-N7R"/>
                                             <constraint firstItem="B92-4g-f8F" firstAttribute="leading" secondItem="enG-tG-bcx" secondAttribute="leading" id="qb9-Pe-NZv"/>
                                         </constraints>
@@ -445,8 +461,8 @@
                     <navigationItem key="navigationItem" title="Currency Converter" id="JOQ-Ho-u0F"/>
                     <connections>
                         <outlet property="circleViewBtn" destination="iCT-hB-u2o" id="RNO-dx-QQa"/>
-                        <outlet property="curLeft" destination="37i-7D-5q5" id="FDc-mG-Uc8"/>
-                        <outlet property="curRight" destination="enG-tG-bcx" id="IDW-oB-neO"/>
+                        <outlet property="curLeft" destination="PB9-Al-j5I" id="0UH-b1-81A"/>
+                        <outlet property="curRight" destination="dow-hy-96I" id="4Lc-h5-cKK"/>
                         <outlet property="decimalButton" destination="QOf-70-US1" id="DiK-su-4YM"/>
                         <outlet property="deleteButton" destination="HTX-FT-6zE" id="3bC-tE-APl"/>
                         <outlet property="equalsButton" destination="YZB-06-kmj" id="bER-1G-3rm"/>

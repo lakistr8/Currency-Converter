@@ -21,8 +21,10 @@ class CurrencyControler: UIViewController {
         return nf
     }()
     
+    // views for changed border in cur left/right
     @IBOutlet weak var curLeft : UIView!
     @IBOutlet weak var curRight : UIView!
+    
     
     //circle view for btn
     @IBOutlet weak var circleViewBtn : UIView!
