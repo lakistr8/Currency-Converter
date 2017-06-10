@@ -14,9 +14,14 @@
         <scene sceneID="C8O-DN-uCb">
             <objects>
                 <navigationController id="dtW-9n-Uq9" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7xH-fN-oZk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" id="7xH-fN-oZk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.35212620890317836" green="0.47724006631239391" blue="0.57499289512634277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="RRu-WX-bwX" kind="relationship" relationship="rootViewController" id="Dhm-rN-RFN"/>
@@ -26,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-257" y="161"/>
         </scene>
-        <!--Currency Converter-->
+        <!--Currency Controler-->
         <scene sceneID="GPc-IU-tmr">
             <objects>
                 <viewController id="RRu-WX-bwX" customClass="CurrencyControler" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
@@ -258,7 +263,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pod-Hn-esm" userLabel="panel">
-                                <rect key="frame" x="0.0" y="70" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37i-7D-5q5" userLabel="curLeft" customClass="CurrencyBox" customModule="CurrencyConverter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="150"/>
@@ -481,7 +486,7 @@
                             <constraint firstItem="GDX-tI-ygV" firstAttribute="top" secondItem="3Rf-fg-5kG" secondAttribute="bottom" id="wt0-Ww-W5G"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Currency Converter" id="JOQ-Ho-u0F"/>
+                    <navigationItem key="navigationItem" id="JOQ-Ho-u0F"/>
                     <connections>
                         <outlet property="circleViewBtn" destination="iCT-hB-u2o" id="RNO-dx-QQa"/>
                         <outlet property="curLeft" destination="PB9-Al-j5I" id="0UH-b1-81A"/>
@@ -524,7 +529,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="igl-V7-a4u" id="D4w-HQ-oO4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-U0-OXJ">
