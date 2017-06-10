@@ -372,18 +372,37 @@
                                             <outlet property="textField" destination="B92-4g-f8F" id="cLN-d1-ycM"/>
                                         </connections>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCT-hB-u2o">
+                                        <rect key="frame" x="160" y="50" width="55" height="50"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m1e-JI-r24">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="50"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="m1e-JI-r24" secondAttribute="trailing" id="K5a-Nz-EpH"/>
+                                            <constraint firstAttribute="bottom" secondItem="m1e-JI-r24" secondAttribute="bottom" id="eXt-fg-Mj2"/>
+                                            <constraint firstItem="m1e-JI-r24" firstAttribute="top" secondItem="iCT-hB-u2o" secondAttribute="top" id="hqs-N6-SyS"/>
+                                            <constraint firstItem="m1e-JI-r24" firstAttribute="leading" secondItem="iCT-hB-u2o" secondAttribute="leading" id="tTR-bc-s20"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="enG-tG-bcx" firstAttribute="width" secondItem="37i-7D-5q5" secondAttribute="width" id="8oz-8p-Ngr"/>
                                     <constraint firstAttribute="height" constant="150" id="Bqa-ec-t7X"/>
                                     <constraint firstAttribute="bottom" secondItem="enG-tG-bcx" secondAttribute="bottom" id="O4S-Kz-VEk"/>
+                                    <constraint firstItem="iCT-hB-u2o" firstAttribute="leading" secondItem="pod-Hn-esm" secondAttribute="leading" constant="160" id="PuR-wK-FoW"/>
+                                    <constraint firstAttribute="trailing" secondItem="iCT-hB-u2o" secondAttribute="trailing" constant="160" id="Tdh-c2-pNI"/>
                                     <constraint firstAttribute="bottom" secondItem="37i-7D-5q5" secondAttribute="bottom" id="WEd-uC-uve"/>
                                     <constraint firstAttribute="trailing" secondItem="enG-tG-bcx" secondAttribute="trailing" id="XG6-Ea-EOT"/>
                                     <constraint firstItem="enG-tG-bcx" firstAttribute="leading" secondItem="37i-7D-5q5" secondAttribute="trailing" constant="1" id="Xb5-Qa-BOt"/>
                                     <constraint firstItem="enG-tG-bcx" firstAttribute="top" secondItem="pod-Hn-esm" secondAttribute="top" id="azH-7w-PyE"/>
                                     <constraint firstItem="37i-7D-5q5" firstAttribute="leading" secondItem="pod-Hn-esm" secondAttribute="leading" id="dig-Jg-0Mw"/>
+                                    <constraint firstAttribute="bottom" secondItem="iCT-hB-u2o" secondAttribute="bottom" constant="50" id="fkn-Ns-5GK"/>
                                     <constraint firstItem="37i-7D-5q5" firstAttribute="top" secondItem="pod-Hn-esm" secondAttribute="top" id="ihd-Uz-WLY"/>
+                                    <constraint firstItem="iCT-hB-u2o" firstAttribute="top" secondItem="pod-Hn-esm" secondAttribute="top" constant="50" id="tTr-FJ-gQh"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tht-tk-RNI" userLabel="infoblock">
@@ -425,6 +444,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Currency Converter" id="JOQ-Ho-u0F"/>
                     <connections>
+                        <outlet property="circleViewBtn" destination="iCT-hB-u2o" id="RNO-dx-QQa"/>
+                        <outlet property="curLeft" destination="37i-7D-5q5" id="FDc-mG-Uc8"/>
+                        <outlet property="curRight" destination="enG-tG-bcx" id="IDW-oB-neO"/>
                         <outlet property="decimalButton" destination="QOf-70-US1" id="DiK-su-4YM"/>
                         <outlet property="deleteButton" destination="HTX-FT-6zE" id="3bC-tE-APl"/>
                         <outlet property="equalsButton" destination="YZB-06-kmj" id="bER-1G-3rm"/>

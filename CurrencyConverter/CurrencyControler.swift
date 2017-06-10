@@ -21,6 +21,16 @@ class CurrencyControler: UIViewController {
         return nf
     }()
     
+    @IBOutlet weak var curLeft : UIView!
+    @IBOutlet weak var curRight : UIView!
+    
+    //circle view for btn
+    @IBOutlet weak var circleViewBtn : UIView!
+    func makeItCircle() {
+        self.circleViewBtn.layer.masksToBounds = true
+        self.circleViewBtn.layer.cornerRadius  = CGFloat(roundf(Float(self.circleViewBtn.frame.size.width/2)))
+    }
+    
     
     @IBOutlet weak var decimalButton: UIButton!
     @IBAction func decimalButtonTapped(_ sender: UIButton) {
@@ -230,6 +240,7 @@ extension ViewLifecycle {
         cleanupUI()
         setupInitialCurrencies()
         setupCurrencyBoxes()
+        makeItCircle()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -398,10 +409,6 @@ extension CurrencyControler : UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return false
     }
-    
-}
-
-extension CurrencyControler {
     
 }
 
