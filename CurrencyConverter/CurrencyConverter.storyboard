@@ -544,9 +544,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tht-tk-RNI" userLabel="infoblock">
-                                <rect key="frame" x="0.0" y="255" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="257" width="375" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change - Currnecy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBt-pP-EXQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change  Currnecy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBt-pP-EXQ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -578,7 +578,7 @@
                             <constraint firstItem="3Rf-fg-5kG" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="Mk8-fu-ndg"/>
                             <constraint firstItem="9w1-xu-U0O" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="NeI-8j-laG"/>
                             <constraint firstAttribute="bottomMargin" secondItem="cgg-jm-145" secondAttribute="bottom" id="R5n-Am-pF7"/>
-                            <constraint firstItem="3Rf-fg-5kG" firstAttribute="top" secondItem="tht-tk-RNI" secondAttribute="bottom" constant="2" id="RFu-97-mRz"/>
+                            <constraint firstItem="3Rf-fg-5kG" firstAttribute="top" secondItem="tht-tk-RNI" secondAttribute="bottom" id="RFu-97-mRz"/>
                             <constraint firstItem="9w1-xu-U0O" firstAttribute="top" secondItem="cBv-4k-oX2" secondAttribute="bottom" id="TOQ-Nb-FkD"/>
                             <constraint firstItem="tht-tk-RNI" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="c4c-kC-MC2"/>
                             <constraint firstItem="cgg-jm-145" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="hjA-ja-3bi"/>
