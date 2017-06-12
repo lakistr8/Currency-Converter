@@ -20,6 +20,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.44357591808949248" green="0.60118274417289375" blue="0.72432268573547987" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
@@ -31,7 +32,7 @@
             </objects>
             <point key="canvasLocation" x="-257" y="161"/>
         </scene>
-        <!--Currency Controler-->
+        <!--CURRENCY-CONVERTER-->
         <scene sceneID="GPc-IU-tmr">
             <objects>
                 <viewController id="RRu-WX-bwX" customClass="CurrencyControler" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,7 +264,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pod-Hn-esm" userLabel="panel">
-                                <rect key="frame" x="0.0" y="114" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37i-7D-5q5" userLabel="curLeft" customClass="CurrencyBox" customModule="CurrencyConverter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="150"/>
@@ -280,7 +281,7 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inh-Xs-Hb3">
                                                         <rect key="frame" x="94" y="0.0" width="93" height="74.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -352,7 +353,7 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKN-Zj-h6L">
                                                         <rect key="frame" x="0.0" y="0.0" width="93" height="74.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -453,43 +454,53 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tht-tk-RNI" userLabel="infoblock">
-                                <rect key="frame" x="0.0" y="270" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="255" width="375" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENCY-CONVERTER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBt-pP-EXQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
-                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change - Currnecy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBt-pP-EXQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="HrB-kW-Tyl"/>
+                                    <constraint firstAttribute="height" constant="60" id="HrB-kW-Tyl"/>
                                     <constraint firstItem="SBt-pP-EXQ" firstAttribute="leading" secondItem="tht-tk-RNI" secondAttribute="leading" id="OL6-Zc-0zt"/>
                                     <constraint firstAttribute="bottom" secondItem="SBt-pP-EXQ" secondAttribute="bottom" id="XhL-ic-LTi"/>
                                     <constraint firstAttribute="trailing" secondItem="SBt-pP-EXQ" secondAttribute="trailing" id="bx0-Db-8WS"/>
                                     <constraint firstItem="SBt-pP-EXQ" firstAttribute="top" secondItem="tht-tk-RNI" secondAttribute="top" id="cvs-bM-OhY"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated - 12.06.2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9w1-xu-U0O">
+                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cgg-jm-145" secondAttribute="trailing" id="1r0-bd-ZdX"/>
+                            <constraint firstItem="pod-Hn-esm" firstAttribute="top" secondItem="9w1-xu-U0O" secondAttribute="bottom" id="In3-6F-ZQQ"/>
                             <constraint firstAttribute="trailing" secondItem="tht-tk-RNI" secondAttribute="trailing" id="Kfg-9q-CjD"/>
                             <constraint firstAttribute="trailing" secondItem="3Rf-fg-5kG" secondAttribute="trailing" id="LiH-8T-LEH"/>
                             <constraint firstItem="3Rf-fg-5kG" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="Mk8-fu-ndg"/>
+                            <constraint firstItem="9w1-xu-U0O" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="NeI-8j-laG"/>
                             <constraint firstAttribute="bottomMargin" secondItem="cgg-jm-145" secondAttribute="bottom" id="R5n-Am-pF7"/>
                             <constraint firstItem="3Rf-fg-5kG" firstAttribute="top" secondItem="tht-tk-RNI" secondAttribute="bottom" constant="2" id="RFu-97-mRz"/>
+                            <constraint firstItem="9w1-xu-U0O" firstAttribute="top" secondItem="cBv-4k-oX2" secondAttribute="bottom" id="TOQ-Nb-FkD"/>
                             <constraint firstItem="tht-tk-RNI" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="c4c-kC-MC2"/>
                             <constraint firstItem="cgg-jm-145" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="hjA-ja-3bi"/>
                             <constraint firstAttribute="trailing" secondItem="pod-Hn-esm" secondAttribute="trailing" id="im6-ej-bWW"/>
+                            <constraint firstItem="pod-Hn-esm" firstAttribute="top" secondItem="cBv-4k-oX2" secondAttribute="bottom" constant="30" id="jcl-W0-kVt"/>
                             <constraint firstItem="cgg-jm-145" firstAttribute="top" secondItem="oDg-uL-cPs" secondAttribute="topMargin" id="mqo-ZI-GPO"/>
-                            <constraint firstItem="pod-Hn-esm" firstAttribute="top" secondItem="cBv-4k-oX2" secondAttribute="bottom" constant="50" id="p5B-rU-ipr"/>
                             <constraint firstItem="pod-Hn-esm" firstAttribute="leading" secondItem="oDg-uL-cPs" secondAttribute="leading" id="rF2-ET-CK5"/>
+                            <constraint firstAttribute="trailing" secondItem="9w1-xu-U0O" secondAttribute="trailing" id="txf-gF-Rhc"/>
                             <constraint firstItem="GDX-tI-ygV" firstAttribute="top" secondItem="3Rf-fg-5kG" secondAttribute="bottom" id="wt0-Ww-W5G"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JOQ-Ho-u0F"/>
+                    <navigationItem key="navigationItem" title="CURRENCY-CONVERTER" id="JOQ-Ho-u0F"/>
                     <connections>
                         <outlet property="circleViewBtn" destination="iCT-hB-u2o" id="RNO-dx-QQa"/>
                         <outlet property="curLeft" destination="PB9-Al-j5I" id="0UH-b1-81A"/>
@@ -546,7 +557,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tj-YV-lk3">
                                             <rect key="frame" x="58" y="0.0" width="317" height="43.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
