@@ -90,6 +90,22 @@ class CurrencyControler: UIViewController {
     //	numbers
     @IBOutlet var digitButtons: [UIButton]!
     
+    // circle border for buttons
+    func btnBorders() {
+        // equal btn border
+        self.equalsButton.layer.masksToBounds = true
+        self.equalsButton.layer.cornerRadius  = CGFloat(roundf(Float(self.equalsButton.frame.size.width/20)))
+        //operator buttons border
+        for btn in operatorButtons {
+        btn.layer.masksToBounds = true
+        btn.layer.cornerRadius  = CGFloat(roundf(Float(btn.frame.size.width/20)))
+        }
+        // digit buttons border
+        for btn in digitButtons {
+        btn.layer.masksToBounds = true
+        btn.layer.cornerRadius  = CGFloat(roundf(Float(btn.frame.size.width/20)))
+        }
+    }
     
     //	CALCULATIONS
     
@@ -260,6 +276,7 @@ extension ViewLifecycle {
         setupCurrencyBoxes()
         makeItCircle()
         makeCurCircle()
+        btnBorders()
     }
     
     override func viewWillAppear(_ animated: Bool) {
